@@ -1,0 +1,23 @@
+{
+  "name": "영수증 하이패스",
+  "short_name": "영수증패스",
+  "description": "영수증 사진으로 비용청구서·출장보고서·기안서를 만들어요",
+  "lang": "ko",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1D1E20",
+  "theme_color": "#1D1E20",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-mask-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
+    {"src": "icons/icon-mask-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "share_target": {
+    "action": "./?share=1",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {"files": [{"name": "photos", "accept": ["image/*", "application/pdf"]}]}
+  }
+}
