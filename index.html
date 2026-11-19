@@ -900,6 +900,61 @@ button.plate:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .blurbox h3{font-size:19px;margin:0 0 8px}.blurbox p{color:#555;line-height:1.6;margin:0 0 16px;font-size:15px}.blurbox .mfoot{justify-content:center}
 #verBar{background:#1D1E20;color:#fff;border-color:#000}#verBar small{color:#BDBDB8}#verBar .go{background:#FFC400;color:#1D1E20}#verBar .x{color:#BDBDB8}
 
+/* ===== v9: 현장 시험 반영 ===== */
+.cbr{display:none}
+@media (max-width:760px){.cbr{display:inline}.photo .credit span{line-height:1.8}}
+/* 폰에서 찍은 영수증 창 */
+.ibfoot{flex-direction:column;align-items:stretch!important;gap:10px}
+.ibfoot #inboxOk{height:52px;font-size:16px}.ibfoot #inboxOk:disabled{opacity:.45}
+.ibsub{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+#inboxList{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+#inboxList .ib{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;border:1.5px solid #D6D2C6;border-radius:12px;padding:12px;cursor:pointer;background:#fff;text-align:left}
+#inboxList .ib input{position:absolute;opacity:0;pointer-events:none}
+#inboxList .ib .cb{width:26px;height:26px;border:2.5px solid #1D1E20;border-radius:7px;display:flex;align-items:center;justify-content:center}
+#inboxList .ib.on{border-color:#1D1E20;box-shadow:3px 3px 0 #FFC400}#inboxList .ib.on .cb{background:#1D1E20}#inboxList .ib.on .cb::after{content:"✓";color:#FFC400;font-weight:800}
+#inboxList .ib b{display:block;font-size:15.5px}#inboxList .ib small{color:var(--mute)}
+#inboxList .ib:focus-within{outline:3px solid #FFC400}
+/* 작성 완료(최종) 화면 */
+.donev{grid-template-columns:minmax(0,1fr) min(560px,46vw)!important}
+.fin{padding:22px 24px 18px!important;gap:12px!important;overflow:auto}
+.fin .cftot{margin:0}
+.fin .checks:empty{display:none}
+.bigacts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ba{display:grid;grid-template-columns:52px 1fr;grid-template-rows:auto auto;column-gap:12px;align-items:center;text-align:left;border:1.5px solid #1D1E20;background:#fff;border-radius:14px;padding:12px 14px;cursor:pointer;font-family:var(--sans)}
+.ba .bi{grid-row:1/3;width:52px;height:52px;border-radius:12px;background:#F1EFE9;display:flex;align-items:center;justify-content:center}.ba .bi .ico{width:28px;height:28px}
+.ba b{font-size:17px;font-weight:800}.ba small{font-size:12.5px;color:var(--mute);line-height:1.35}
+.ba.p{background:#FFC400;border-color:#FFC400}.ba.p .bi{background:#1D1E20;color:#FFC400}.ba.p small{color:#3a3a36}
+.ba.done{background:#EAF6EA;border-color:#4A9A4A}.ba.done .bi{background:#4A9A4A;color:#fff}
+.ba:hover{box-shadow:3px 3px 0 #FFC400}.ba:focus-visible{outline:3px solid #1D1E20;outline-offset:2px}
+.svset{border:1px solid var(--line);border-radius:10px;padding:8px 12px;background:#FAF8F0}
+.svset summary{cursor:pointer;font-size:14px;font-weight:700}.svset summary span{font-weight:400;color:var(--mute)}
+.svset[open]{display:grid;gap:10px}.fhint{margin:0;font-size:12.5px;color:#7a4b10;background:#FFF6D6;border-radius:8px;padding:8px 10px;line-height:1.5}
+.fin label.ck{font-size:15px;font-weight:700;display:flex;gap:8px;align-items:center}.fin label.ck input{width:20px;height:20px}
+.fin label.ck.need{color:#C8402F;animation:shk .4s 2}@keyframes shk{50%{transform:translateX(4px)}}
+@media (prefers-reduced-motion:reduce){.fin label.ck.need{animation:none}}
+.pvwrap{flex:1;min-height:320px;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#E9E6DE}
+.pvwrap .pvbody{flex:1;overflow:auto}
+.fin .nxt-cta{margin-top:0}
+.donev .pass .info{display:none}
+/* 도움말 열었을 때 완료 화면이 두 번 줄던 문제 */
+@media (min-width:761px){body.helpdock .donev{margin-right:0!important;right:440px}}
+/* 영수증 확대 */
+.rcbox{overflow:hidden;touch-action:none}.rcbox .rcsvg{transform-origin:center;transition:none;will-change:transform}
+.zhint{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);background:rgba(29,30,32,.78);color:#fff;font-size:12.5px;padding:5px 10px;border-radius:999px;pointer-events:none;white-space:nowrap}
+/* 오류 알림 */
+#toast.err{background:#3A1E1A;border-left:5px solid #E8505B;display:flex;align-items:center;gap:10px}
+#toast .tw{flex:none;width:24px;height:24px;border-radius:50%;background:#E8505B;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+/* 1·2·3 눌러 이동 */
+.road2 .dots i{cursor:pointer}.road2 .dots i:hover{background:#FFE071;color:#1D1E20}.road2 .dots i:focus-visible{outline:3px solid #fff;outline-offset:2px}
+/* PC 창이 좁을 때 위쪽 띠 */
+.band .tab span,.tgbig .tt b,.signer .tt b,.helpbtn em,.chg{white-space:nowrap}
+@media (max-width:1400px) and (min-width:761px){.road2 b{display:none}.tgbig .tt small,.signer .tt small{display:none}}
+@media (max-width:1200px) and (min-width:761px){.band{column-gap:12px;padding:0 16px}.helpbtn em{display:none}.helpbtn{padding:0 8px}.instbtn{font-size:0;padding:0 6px;gap:0}.instbtn img{margin:0}.signer .tt{display:none}}
+@media (max-width:1000px) and (min-width:761px){.road2{display:none}.tgbig .tt b{font-size:13px}.band .tab{padding:0 10px}}
+@media (max-width:860px) and (min-width:761px){.tgbig .tt{display:none}.band .tab span{display:none}}
+/* 세부 내용 적요 칸 넓게 */
+table.rows td input[data-c="desc"]{min-width:120px}
+
 </style>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -927,7 +982,7 @@ button.plate:focus-visible{outline:3px solid #fff;outline-offset:3px}
       <div class="stage" id="stage"></div>
     </div>
     <div class="strip"><div class="thumbs2" id="thumbs2"></div>
-      <div class="credit"><span>상근자 동지들의 퇴근을 앞당기려고, 조혜진 국장이 만들었어요😁✌️</span></div>
+      <div class="credit"><span>상근자 동지들의 퇴근을 앞당기려고,<br class="cbr"> 조혜진 국장이 만들었어요😁✌️</span></div>
     </div>
   </section>
   <section class="form">
@@ -943,14 +998,14 @@ button.plate:focus-visible{outline:3px solid #fff;outline-offset:3px}
       </div>
     </div>
     <div class="editor" id="editor"></div>
-    <div class="credit2"><span>상근자 동지들의 퇴근을 앞당기려고, 조혜진 국장이 만들었어요😁✌️</span></div>
+    <div class="credit2"><span>상근자 동지들의 퇴근을 앞당기려고,<br class="cbr"> 조혜진 국장이 만들었어요😁✌️</span></div>
     <div class="totbar" id="totbar"><span class="lb">합계</span><b id="totV">0</b><span class="u">원</span><small id="totSub"></small></div>
     <div class="formfoot">
-      <div class="next"><button class="gobtn" id="btnConfirm" type="button">적요 쓰고 저장 단계로 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
+      <div class="next"><button class="gobtn" id="btnConfirm" type="button">작성 완료 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div>
       <div class="minor">
         <button id="btnPv" type="button"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>미리보기</button>
         <button id="btnPrint" type="button"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>인쇄</button>
-        <button id="btnZip" type="button"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8v13H3V8"/><path d="M1 3h22v5H1z"/><path d="M10 12h4"/></svg>전체 받기(zip)</button>
+        <button id="btnZip" type="button"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8v13H3V8"/><path d="M1 3h22v5H1z"/><path d="M10 12h4"/></svg>전체 받기</button>
         <button id="btnPrintAll" type="button">전체 인쇄</button>
       </div>
     </div>
@@ -970,7 +1025,7 @@ button.plate:focus-visible{outline:3px solid #fff;outline-offset:3px}
     <div class="crumb" id="crumb"></div>
     <h2 id="flTitle"></h2>
     <div id="flRows"></div>
-    <div class="selbar" id="selbar" hidden><span id="selInfo"></span><span class="sp"></span><button id="selPrint" type="button">전체 인쇄</button><button class="p" id="selZip" type="button">전체 받기(zip)</button></div>
+    <div class="selbar" id="selbar" hidden><span id="selInfo"></span><span class="sp"></span><button id="selPrint" type="button">전체 인쇄</button><button class="p" id="selZip" type="button">전체 받기</button></div>
   </section>
   <aside class="rule">
     <h3>폴더 정리 규칙<small>저장할 때 이 규칙대로 폴더를 알아서 만들어요</small></h3>
@@ -983,43 +1038,38 @@ button.plate:focus-visible{outline:3px solid #fff;outline-offset:3px}
 
 <section class="donev" id="vDone" hidden>
   <div class="pass"><div class="rally"></div>
-    <div class="txt"><div class="ok"><span class="ck"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span id="doneWord">저장했어요</span></div><p class="slogan">“서류는 빠르게,<br>투쟁은 힘차게!”</p></div>
+    <div class="txt"><div class="ok"><span class="ck"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span id="doneWord">다 됐어요</span></div><p class="slogan">“서류는 빠르게,<br>투쟁은 힘차게!”</p></div>
     <div class="info" id="doneInfo"></div>
   </div>
-  <aside class="next2"><h2>다음엔 뭘 할까요?</h2>
-    <button class="nb p" data-done="phone"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span><span>폰에서 찍은 영수증 이어 쓰기<small id="doneDrive">드라이브에 연결하면 보여요</small></span></button>
-    <button class="nb" data-done="print"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span><span>바로 인쇄<small>방금 저장한 서류</small></span></button>
-    <button class="nb" data-done="docs"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span><span>내 문서에서 보기<small id="donePath"></small></span></button>
-    <button class="nb" data-done="edit"><span class="ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span><span>다시 열어서 고치기<small>저장한 내용을 고쳐요</small></span></button>
+  <aside class="next2 fin">
+    <div class="cftot" id="cfTot"></div>
+    <div class="checks" id="checks"></div>
+    <div class="bigacts">
+      <button class="ba p" data-done="save" type="button"><span class="bi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg></span><b id="saveLbl">저장하기</b><small id="saveSub">정해 둔 폴더에 저장</small></button>
+      <button class="ba" data-done="print" type="button"><span class="bi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span><b>바로 인쇄</b><small>저장 안 해도 돼요</small></button>
+      <button class="ba" data-done="edit" type="button"><span class="bi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span><b>다시 고치기</b><small>작성 화면으로</small></button>
+      <button class="ba" data-done="docs" type="button"><span class="bi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span><b>내 문서</b><small id="donePath">저장한 서류 보기</small></button>
+    </div>
+    <details class="svset"><summary>저장 설정 <span id="svSum"></span></summary>
+      <div class="f"><label>파일 형식</label><div class="seg" id="fmtSeg"><button data-fmt="hwpx" class="on" type="button">한글</button><button data-fmt="pdf" type="button">PDF</button><button data-fmt="png" type="button">이미지</button></div></div>
+      <div class="dest" id="dest"></div>
+      <p class="fhint">폴더를 고를 때 "열 수 없음"이 뜨면, <b>문서</b> 안에 <b>새 폴더</b>(예: 영수증 하이패스)를 만들어 그 폴더를 골라 주세요.</p>
+      <label class="tog"><span>폰에서도 볼 수 있게 드라이브에 보관</span><span class="swg"><small id="drvTogTxt">꺼짐</small><input type="checkbox" id="drvTog" class="swi"></span></label>
+    </details>
+    <label class="ck"><input type="checkbox" id="seenOk"> 아래 출력 모습을 직접 확인했어요</label>
+    <div class="pvwrap"><div class="pvbody" id="pvbody"><div class="pvscale" id="pvscale"></div></div><div class="pvbar"><span class="hint" id="pvhint"></span></div></div>
     <button class="nxt-cta" data-done="new" type="button">다음 영수증 쓰기 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+    <button id="btnDown" type="button" hidden></button><small id="doneDrive" hidden></small>
   </aside>
 </section>
-
-<!-- 저장 전 확인 -->
-<div class="modal mconf" id="mConfirm"><div class="mbox">
-  <div class="cf-l">
-    <div class="cftot" id="cfTot"></div>
-    <div class="warn"><span class="tri">!</span><span><b>저장하기 전에 꼭 직접 확인하세요.</b><br>영수증에서 읽은 날짜와 금액이 틀릴 수 있어요. 출력될 모습 그대로예요.</span></div>
-    <div class="pvbody" id="pvbody"><div class="pvscale" id="pvscale"></div></div>
-    <div class="pvbar"><span class="hint" id="pvhint"></span></div>
-  </div>
-  <div class="cf-r">
-    <div class="mhead"><b>어디에 저장할까요?</b><button class="btn sm" data-close type="button">닫기</button></div>
-    <div class="checks" id="checks"></div>
-    <div class="f"><label>파일 형식</label><div class="seg" id="fmtSeg"><button data-fmt="hwpx" class="on" type="button">한글</button><button data-fmt="pdf" type="button">PDF</button><button data-fmt="png" type="button">이미지</button></div></div>
-    <div class="dest" id="dest"></div>
-    <label class="tog"><span>폰에서도 볼 수 있게 드라이브에 보관</span><span class="swg"><small id="drvTogTxt">꺼짐</small><input type="checkbox" id="drvTog" class="swi"></span></label>
-    <label class="ck"><input type="checkbox" id="seenOk"> 출력 모습을 직접 확인했어요</label>
-    <button class="gobtn" id="btnDown" type="button"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>이 폴더에 저장</button>
-  </div>
-</div></div>
+<div class="modal" id="mConfirm" hidden></div>
 
 <!-- 폰에서 온 영수증 -->
 <div class="modal" id="mInbox"><div class="mbox" style="width:min(760px,94vw)">
   <div class="mhead"><b>폰에서 찍은 영수증</b><button class="btn sm" data-close type="button">닫기</button></div>
   <div class="hint" id="inboxHint"></div>
   <div class="inbox" id="inboxList"></div>
-  <div class="mfoot"><button class="btn" id="drvOut" type="button">구글 연결 끊기</button><span style="flex:1"></span><button class="btn" id="inboxReload" type="button">새로고침</button><button class="btn pri" id="inboxOk" type="button">골라서 가져오기</button></div>
+  <div class="mfoot ibfoot"><button class="btn pri" id="inboxOk" type="button">체크한 문서 가져오기</button><div class="ibsub"><button class="btn" id="inboxReload" type="button">새로고침</button><button class="btn" id="drvOut" type="button">구글 연결 끊기</button></div></div>
 </div></div>
 
 <div id="printArea"></div>
@@ -1276,7 +1326,7 @@ function renderEditor(){
       <table class="rows"><thead><tr><th></th><th style="width:92px">항목</th><th>내역</th><th style="width:96px">금액(원)</th><th style="width:150px">인원 · 비고</th><th style="width:26px"></th></tr></thead><tbody>
       ${d.items.map((r,i)=>`<tr><td class="n">${i+1}</td>
         <td><select data-i="${i}" data-c="k">${TRIP_UI.map(c=>`<option ${c===itemK(r)?'selected':''}>${c}</option>`).join('')}</select>${itemK(r)==='직접 입력'?`<input type="text" class="klabel" data-i="${i}" data-c="label" value="${esc(r.label||'')}" placeholder="항목 이름">`:''}</td>
-        <td><input type="text" class="${r.auto&&r.auto.desc?'auto':''}" data-i="${i}" data-c="desc" value="${esc(r.desc)}" placeholder="${r.cat==='교통비'?'예: 오송역→서울역 (KTX)':r.cat==='숙박비'?'예: 아산 ○○모텔 1박':'예: 야근 석식'}"></td>
+        <td><input type="text" class="${r.auto&&r.auto.desc?'auto':''}" data-i="${i}" data-c="desc" value="${esc(r.desc)}" placeholder="${itemK(r)==='교통비'?'예: 오송역→서울역 (KTX)':itemK(r)==='숙박비'?'예: 아산 ○○모텔 1박':MEALS.includes(itemK(r))?'예: '+itemK(r)+' (김밥천국)':'예: 내역'}"></td>
         <td><input type="text" class="amt ${r.auto&&r.auto.amount?'auto':''}" inputmode="numeric" data-i="${i}" data-c="amount" value="${esc(r.amount?won(num(r.amount)):'')}"></td>
         <td><div class="ppl">${needsPeople(r,'trip')?`<input type="number" min="0" data-i="${i}" data-c="people" value="${esc(r.people||'')}" placeholder="인원"><span>인</span>`:''}<input type="text" data-i="${i}" data-c="memo" value="${esc(r.memo)}" placeholder="비고"></div></td>
         <td><button class="rowdel" data-delitem="${i}" title="줄 삭제">×</button></td></tr>`).join('')}
@@ -1291,7 +1341,7 @@ function renderEditor(){
       <div class="f"><label>합계금액(원)</label><input type="text" class="amt ${d.autoAmt?'auto':''}" inputmode="numeric" data-k="amount" value="${esc(d.amount?won(num(d.amount)):'')}"></div>
     </div></div>`;
   }
-  if(d.type!=='gian' || true){
+  if(false){
     h+=`<div class="sec"><h3>${d.type==='gian'?'첨부 (견적서 등, 선택)':'영수증 · 거래명세서 · 견적서'} <span class="sp"></span><span class="hint">2쪽에 붙어요</span></h3>
       <div class="drop" id="drop">사진·PDF를 여기로 끌어다 놓거나 <u>눌러서 고르기</u><br><span class="hint">${d.type==='gian'?'JPG · PNG · PDF':(d.type==='bill'?'영수증 1장 = 비용청구서 1건 · 거래명세서와 견적서는 한 건으로 묶고 거래명세서 기준으로 채워요':'넣으면 영수증마다 한 줄씩, 날짜·금액을 읽어 채워요')+' (인터넷 없이 이 PC에서 처리)'}</span></div>
       <input type="file" id="fileIn" accept="image/*,application/pdf,.pdf" multiple hidden>
@@ -1354,7 +1404,7 @@ $('#editor').addEventListener('change',e=>{
   if(t.dataset.acct==='use'){ d.acct.use=t.checked; d._touched=true; refresh(); return; }
   if(t.dataset.acs){ if(t.value==='__c'){ d._acctCustom=true; d.account=''; } else { d._acctCustom=false; d.account=t.value; } d._touched=true; refresh(); return; }
   if(t.dataset.c==='cat'){ refresh(); return; }
-  if(t.dataset.c==='k'||t.dataset.c==='label'){ const R=d.items[+t.dataset.i]; R.k=R.k||itemK(R); R.cat=catOfK(R.k,R.label); refresh(); return; }
+  if(t.dataset.c==='k'||t.dataset.c==='label'){ const R=d.items[+t.dataset.i]; if(t.dataset.c==='k') R.k=t.value; R.k=R.k||itemK(R); R.cat=catOfK(R.k,R.label); if(MEALS.includes(R.k)){ if(!String(R.desc||'').trim()||R._kAuto){ R.desc=R.k; R._kAuto=true; } } else if(R._kAuto){ R.desc=''; R._kAuto=false; } refresh(); return; }
   if(t.dataset.k==='date'||t.dataset.k==='place'||t.dataset.k==='title'){ const fn=document.querySelector('[data-k="filename"]'); if(fn){ fn.placeholder=autoName(d); fn.nextElementSibling.textContent=`비워 두면 '${autoName(d)}.hwpx'로 저장돼요`; } }
 });
 $('#editor').addEventListener('keydown',e=>{
@@ -1440,7 +1490,7 @@ async function addImages(files){
   }else if(d.type==='trip'){
     d.receipts.push(...recs); sortReceipts(d);
     if(ok) recs.filter(rc=>rc.kind!=='견적서'&&rc.kind!=='증빙자료').forEach(rc=>{ const r=rc.ocr; if(!r){ miss++; return; } const g=guessDesc(r,'trip');
-      const row={cat:g.cat,k:g.cat==='식대'?mealByTime(r.time):g.cat,rcid:rc.id||(rc.id=uid()),desc:'',amount:r.amount?String(r.amount):'',memo:'',people:'',auto:{...(r.amount?{amount:1}:{})}};
+      const kk=g.cat==='식대'?mealByTime(r.time):g.cat; const row={cat:g.cat,k:kk,_kAuto:MEALS.includes(kk),rcid:rc.id||(rc.id=uid()),desc:MEALS.includes(kk)?kk:'',amount:r.amount?String(r.amount):'',memo:'',people:'',auto:{...(r.amount?{amount:1}:{})}};
       const bi=d.items.findIndex(x=>!x.desc&&!String(x.amount).trim()&&!x.memo&&!x.people); if(bi>=0) d.items[bi]=row; else d.items.push(row);
       if(r.date&&(!d.start||r.date<d.start)) d.start=r.date; if(r.date&&d.start&&r.date>d.start&&(!d.end||r.date>d.end)) d.end=r.date;
       if(!r.amount||!r.date) miss++; });
@@ -1759,7 +1809,7 @@ function cellValues(d){
     Object.assign(V,{'2,1':d.title,'3,1':d.note,'4,1':d.account,'16,3':won(totalOf(d)),'18,1':fmtDot(d.date),'19,2':settings.pos,'19,7':name});
     const rows=billRows(d);
     for(let i=0;i<BILL_MAX;i++){ const r=rows[i]; const R=7+i;
-      V[`${R},0`]=r?fmtMD(r.date):''; V[`${R},1`]=r?r.desc:''; V[`${R},3`]=r&&num(r.amount)?String(num(r.amount)):''; V[`${R},9`]=r?memoOut(r):''; }
+      V[`${R},0`]=r?fmtMD(r.date):''; V[`${R},1`]=r?r.desc:''; V[`${R},3`]=r&&num(r.amount)?won(num(r.amount)):''; V[`${R},9`]=r?memoOut(r):''; }
   }
   if(d.type==='gian'){
     Object.assign(V,{'2,1':d.title,'3,1':d.note,'4,1':d.account,'6,0':d.detail.split(/\r?\n/),'7,1':num(d.amount)?won(num(d.amount))+' 원':'','9,1':fmtDot(d.date),'10,2':settings.pos,'10,6':name});
@@ -1767,7 +1817,7 @@ function cellValues(d){
   if(d.type==='trip'){
     Object.assign(V,{'3,1':periodText(d),'4,1':d.place,'5,1':d.remark,'11,4':won(totalOf(d))+'원','16,0':'일시 : '+fmtDot(d.date),'17,0':`제출자 :          ${name}`});
     TRIP_CATS.forEach((c,k)=>{ const R=8+k; const it=tripItems(d).filter(r=>r.cat===c);
-      V[`${R},1`]=it.map(r=>outDesc(r)); V[`${R},4`]=it.map(r=>num(r.amount)?String(num(r.amount)):''); V[`${R},6`]=it.some(r=>memoOut(r))?it.map(r=>memoOut(r)):''; });
+      V[`${R},1`]=it.map(r=>outDesc(r)); V[`${R},4`]=it.map(r=>num(r.amount)?won(num(r.amount)):''); V[`${R},6`]=it.some(r=>memoOut(r))?it.map(r=>memoOut(r)):''; });
     const A=d.acct;
     Object.assign(V,{'13,4':A.use&&num(A.general)?won(num(A.general)):'','13,6':A.use?A.gmemo:'','14,4':A.use&&num(A.special)?won(num(A.special)):'','14,6':A.use?A.smemo:''});
   }
@@ -2055,6 +2105,7 @@ function syncDesc(d){ if(!d||d.type!=='bill') return false; const t=(d.title||''
   d.rows.forEach(r=>{ const any=r.date||String(r.amount).trim()||r.memo||r.people||r.desc; if(!any) return; if((!r.desc||r._descAuto)&&r.desc!==t){ r.desc=t; r._descAuto=!!t; ch=true; } }); return ch; }
 $('#editor').addEventListener('input',e=>{ const d=curDoc(); if(!d) return; const t=e.target;
   if(t.dataset.c==='desc'&&t.dataset.r!=null){ d.rows[+t.dataset.r]._descAuto=false; return; }
+  if(t.dataset.c==='desc'&&t.dataset.i!=null){ d.items[+t.dataset.i]._kAuto=false; return; }
   if(t.dataset.k==='title'&&d.type==='bill'){ if(syncDesc(d)){ d.rows.forEach((r,i)=>{ const el=document.querySelector(`[data-r="${i}"][data-c="desc"]`); if(el&&el!==document.activeElement) el.value=r.desc; }); markBad(); renderChecks(); renderPreview(); saveDraft(); } } });
 function titleHint(){ const d=curDoc(); const el=document.querySelector('#editor [data-k="title"]'); if(!el||!d||d.type!=='bill') return; if(el.parentNode.querySelector('.thint')) return;
   el.insertAdjacentHTML('afterend','<span class="hint thint">제목을 쓰면 적요에도 똑같이 들어가요. 적요는 한 줄씩 따로 고칠 수 있어요.</span>'); }
@@ -2092,7 +2143,7 @@ function renderStage(){
     st.innerHTML=`<div class="rgrid">${d.receipts.map((r,i)=>`<button class="rg ${r.kind==='증빙자료'?'pf':''}" data-big="${i}"><span class="del" data-del="${i}" title="이 영수증 빼기">×</span><span class="im">${rcSVG(r,false)}</span><span class="cap"><i class="no">${i+1}</i><span class="tg" data-tog="${i}" title="눌러서 영수증/증빙자료 바꾸기">${esc(rcLabel(d,r))}</span><span class="am">${r.kind==='증빙자료'?'입력 안 함':(r.ocr&&r.ocr.amount?won(r.ocr.amount)+'원':'')}</span></span></button>`).join('')}</div>`;
   }else{
     const r=d.receipts[selRc];
-    st.className='stage'; st.innerHTML=`${n>1?'<button class="allbtn" data-all="1">← 모두 보기</button>':''}<button class="delbig" data-del="${selRc}" type="button">× 이 영수증 빼기</button><div class="rcbox">${rcSVG(r,true)}</div><div class="calls">${callsOf(d,r)}<span class="call tgc" data-tog="${selRc}" title="눌러서 바꾸기">${r.kind==='증빙자료'?'증빙자료':esc(r.kind||'영수증')} ⇄</span></div>`;
+    st.className='stage'; st.innerHTML=`${n>1?'<button class="allbtn" data-all="1">← 모두 보기</button>':''}<button class="delbig" data-del="${selRc}" type="button">× 이 영수증 빼기</button><div class="rcbox">${rcSVG(r,true)}</div><div class="zhint" id="zhint">두 손가락으로 벌리거나, 끌어서 확대해 보세요</div><div class="calls">${callsOf(d,r)}<span class="call tgc" data-tog="${selRc}" title="눌러서 바꾸기">${r.kind==='증빙자료'?'증빙자료':esc(r.kind||'영수증')} ⇄</span></div>`;
   }
   th.innerHTML=d.receipts.map((r,i)=>`<button class="${i===selRc&&!(n>1&&stageAll)?'on':''} ${r.kind==='증빙자료'?'pf':''}" data-rc="${i}" title="${esc(rcLabel(d,r))}"><img src="${r.url}" alt="">${r.kind==='증빙자료'?'<i>증빙</i>':''}<span class="tdel" data-del="${i}" title="빼기">×</span></button>`).join('')+`<label class="addrc" title="영수증 추가">＋<input type="file" accept="image/*,application/pdf,.pdf" multiple hidden data-addrc="1"></label>`;
   if(d.type==='trip' && n){
@@ -2200,14 +2251,18 @@ function renderDest(){
   document.querySelectorAll('#fmtSeg button').forEach(b=>b.classList.toggle('on',b.dataset.fmt===ui.fmt));
   $('#btnDown').innerHTML=I_DOWN+(ui.fmt==='pdf'?'인쇄 창에서 PDF로 저장':(rootDir?'이 폴더에 저장':'저장하기'));
   $('#drvTog').checked=ui.drive&&!!G.token; $('#drvTogTxt').textContent=$('#drvTog').checked?'켜짐':'꺼짐';
+  const fn={hwpx:'한글',pdf:'PDF',png:'이미지'}[ui.fmt]; const where=rootDir?[rootDir.name,...parts].join(' / '):(canPick()?'폴더 고르기 필요':'다운로드 폴더');
+  $('#svSum').textContent=`· ${fn} · ${where}`; $('#saveSub').textContent=`${fn} 파일 · ${rootDir?rootDir.name+' 폴더':(canPick()?'처음 한 번 폴더를 골라요':'다운로드 폴더')}`;
 }
 $('#dest').addEventListener('click',e=>{ if(e.target.id==='destPick') pickRoot(); });
 $('#fmtSeg').onclick=e=>{ const b=e.target.closest('[data-fmt]'); if(!b) return; ui.fmt=b.dataset.fmt; saveUi(); renderDest(); };
 $('#drvTog').onchange=async e=>{ if(e.target.checked && !G.token){ e.target.checked=false; await G.connect(); if(G.token){ ui.drive=true; } } else ui.drive=e.target.checked; saveUi(); renderDest(); };
 function openConfirm(){
   const d=curDoc(); if(!d) return;
-  $('#seenOk').checked=false; $('#mConfirm').classList.add('on'); renderDest(); renderChecks(); renderPreview();
-  requestAnimationFrame(fitPreview);
+  $('#seenOk').checked=false; const v=$('#vDone'); v.hidden=false; v.dataset.mode='final'; doneDoc=d.id;
+  $('#doneWord').textContent='다 됐어요'; $('#doneInfo').innerHTML=''; $('#saveLbl').textContent='저장하기';
+  document.querySelector('[data-done="save"]').classList.remove('done');
+  renderDest(); renderChecks(); renderPreview(); requestAnimationFrame(()=>{ fitPreview(); const b=$('#pvbody'); if(b) b.scrollTop=0; });
 }
 $('#btnConfirm').onclick=openConfirm; $('#btnPv').onclick=openConfirm;
 $('#mConfirm').addEventListener('click',e=>{ if(e.target.closest('[data-close]')||e.target.id==='mConfirm') $('#mConfirm').classList.remove('on'); });
@@ -2223,7 +2278,7 @@ async function pagePng(d){
 $('#btnDown').onclick=async()=>{
   const d=curDoc(); if(!d) return;
   if(check(d).E.length){ toast('빠진 부분을 먼저 채워 주세요'); return; }
-  if(!$('#seenOk').checked){ toast('출력 모습을 확인하고 "직접 확인했어요"에 체크해 주세요'); $('#seenOk').focus(); return; }
+  if(!$('#seenOk').checked){ toast('아래 출력 모습을 확인하고 "직접 확인했어요"에 체크해 주세요'); $('#seenOk').focus(); $('#seenOk').closest('label').classList.add('need'); setTimeout(()=>$('#seenOk').closest('label').classList.remove('need'),1600); return; }
   const parts=folderParts(d), base=outName(d); let where='다운로드 폴더', ok=false;
   try{
     if(ui.fmt==='pdf'){ $('#mConfirm').classList.remove('on'); toast('인쇄 창에서 대상(프린터)을 "PDF로 저장"으로 골라 주세요'); doPrint([d]); ok=true; where='인쇄 창'; }
@@ -2254,10 +2309,14 @@ function showDone(d,where,parts){
   $('#doneInfo').innerHTML=`<span>저장 위치 <b>${esc(where)}</b></span><span>형식 <b>${({hwpx:'한글',png:'이미지',pdf:'PDF'})[ui.fmt]}</b></span>${ui.drive&&G.token?'<span>드라이브에도 보관됨</span>':''}`;
   $('#donePath').textContent=parts.join(' / ')||'영수증 하이패스';
   $('#doneDrive').textContent=G.token?(G.count?`${G.count}건이 기다리고 있어요`:'아직 새로 온 영수증이 없어요'):'구글로 시작하면 폰에서 찍은 게 여기 떠요';
-  $('#vDone').hidden=false;
+  $('#vDone').hidden=false; $('#vDone').dataset.mode='saved';
+  const sb=document.querySelector('[data-done="save"]'); if(sb){ sb.classList.add('done'); $('#saveLbl').textContent='저장했어요 ✓'; $('#saveSub').textContent='눌러서 내 문서에서 보기'; }
 }
 $('#vDone').addEventListener('click',e=>{
-  const b=e.target.closest('[data-done]'); if(!b) return; const a=b.dataset.done; $('#vDone').hidden=true;
+  const b=e.target.closest('[data-done]'); if(!b) return; const a=b.dataset.done;
+  if(a==='save'){ if(b.classList.contains('done')){ setView('docs'); $('#vDone').hidden=true; return; } $('#btnDown').click(); return; }
+  if(a==='print'){ const d=docs.find(x=>x.id===doneDoc); if(d) doPrint([d]); return; }
+  $('#vDone').hidden=true;
   if(a==='phone') $('#driveIn').click();
   else if(a==='print'){ const d=docs.find(x=>x.id===doneDoc); if(d) doPrint([d]); }
   else if(a==='docs') setView('docs');
@@ -2291,7 +2350,7 @@ function renderDocs(){
   $('#flRows').innerHTML=list.length?`<div class="fr h"><span></span><span>파일 이름</span><span>저장한 날</span><span style="text-align:right">금액(원)</span><span>형식</span><span style="text-align:right">고치기, 인쇄</span></div>`+list.map((s,i)=>{ const live=docs.find(d=>d.id===s.id); const k=s.id+'|'+s.fmt;
     return `<div class="fr ${dsel.picked.has(k)?'sel':''}"><input type="checkbox" data-pick="${esc(k)}" ${dsel.picked.has(k)?'checked':''}><span class="nm"><b>${esc(s.name)}</b><small>${esc(s.where)}${s.nrc?`, 영수증 ${s.nrc}장`:''}</small></span><span class="mo">${esc(s.at.slice(5).replace('-','.'))}</span><span class="r">${won(s.amount||0)}</span><span class="fmt">${fmtN[s.fmt]||s.fmt}</span>
       <span class="act">${live?`<button data-open="${s.id}" title="열어서 고치기">${I_EDIT}</button><button data-print="${s.id}" title="인쇄">${I_PRINT}</button>`:'<span class="hint">기록만 있어요</span>'}</span></div>`; }).join('')
-    :`<div class="empty2">${q?'찾는 문서가 없어요':'이 폴더에 저장한 문서가 없어요. 새로 만들기에서 서류를 저장하면 여기 쌓여요.'}</div>`;
+    :`<div class="empty2">${q?'찾는 문서가 없어요':'아직 저장한 서류가 없어요.<br><b>서류를 저장하면 오른쪽 폴더 정리 규칙대로 폴더가 자동으로 만들어져요.</b>'}</div>`;
   const pk=[...dsel.picked].map(k=>saved.find(s=>s.id+'|'+s.fmt===k)).filter(Boolean);
   $('#selbar').hidden=!pk.length; $('#selInfo').innerHTML=`골라 놓은 문서 <b style="color:var(--y);font-family:var(--num)">${pk.length}건, ${won(pk.reduce((a,s)=>a+(s.amount||0),0))}원</b>`;
 }
@@ -2307,7 +2366,15 @@ $('#srchIn').addEventListener('input',e=>{ dsel.q=e.target.value; renderDocs(); 
 document.addEventListener('keydown',e=>{ if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='f'&&ui.view==='docs'){ e.preventDefault(); $('#srchIn').focus(); } });
 function pickedDocs(){ return [...dsel.picked].map(k=>docs.find(d=>d.id===k.split('|')[0])).filter(Boolean); }
 $('#selPrint').onclick=()=>{ const l=pickedDocs(); if(l.length) doPrint(l); else toast('고칠 수 있는 원본이 남아 있는 문서만 인쇄돼요'); };
-$('#selZip').onclick=async()=>{ const l=pickedDocs(); if(!l.length){ toast('원본이 남아 있는 문서만 받을 수 있어요'); return; } const z=new JSZip(); for(const d of l) z.file(outName(d)+'.hwpx',await buildHwpx(d)); saveBlob(await z.generateAsync({type:'blob'}),`${mmdd(today())} 영수증 하이패스 ${l.length}건.zip`); };
+$('#selZip').onclick=async()=>{ const l=pickedDocs(); if(!l.length){ toast('원본이 남아 있는 문서만 받을 수 있어요'); return; } await saveMany(l); };
+
+/* ---------------- 여러 서류를 한 파일씩 저장 ---------------- */
+async function saveMany(list){ const ok=list.filter(d=>!check(d).E.length); if(!ok.length){ toast('빠진 부분 없는 서류만 받을 수 있어요'); return; }
+  if(canPick()&&!rootDir){ toast('저장할 폴더를 골라 주세요'); await pickRoot(); }
+  let n=0, inFolder=0; for(const d of ok){ try{ const name=outName(d)+'.hwpx', blob=await buildHwpx(d);
+      if(await writeToFolder(folderParts(d),name,blob)) inFolder++; else { saveBlob(blob,name); await new Promise(r=>setTimeout(r,350)); } n++; }catch(e){ console.error(e); } }
+  toast(`${n}건을 한글 파일로 하나씩 저장했어요`+(inFolder?` (${rootDir.name} 폴더)`:'')+(ok.length<list.length?` · 빠진 부분 있는 ${list.length-ok.length}건 제외`:'')); }
+$('#btnZip').onclick=()=>saveMany(docs);
 
 /* ---------------- 구글 드라이브 ---------------- */
 const G={token:null,exp:0,client:null,count:0,items:[],sel:new Set(),root:null,inbox:null,
@@ -2335,12 +2402,12 @@ const G={token:null,exp:0,client:null,count:0,items:[],sel:new Set(),root:null,i
     if(!d.receipts.length && d.type!=='gian' && !confirm('영수증 사진이 없어요. 사진 없이 보낼까요?')) throw new Error('사진을 먼저 찍어 주세요');
     const inbox=await this.inboxId(); const ids=[];
     for(let i=0;i<d.receipts.length;i++){ const r=d.receipts[i]; const blob=await (await fetch(r.url)).blob(); ids.push(await this.upload({name:`${fileName(d)}-${i+1}.jpg`,parents:[inbox],appProperties:{rp:'img',doc:d.id}},blob)); }
-    const data=Object.assign({},d,{receipts:d.receipts.map((r,i)=>({id:ids[i],kind:r.kind,id:r.id,ocr:r.ocr||null}))});
+    const data=Object.assign({},d,{receipts:d.receipts.map((r,i)=>({id:ids[i],rid:r.id,kind:r.kind,ocr:r.ocr||null,w:r.w,h:r.h}))});
     await this.upload({name:`${fileName(d)}.json`,parents:[inbox],appProperties:{rp:'doc',doc:d.id,title:docLabel(d).slice(0,60),kind:d.type,amt:String(totalOf(d))}},new Blob([JSON.stringify(data)],{type:'application/json'}));
   },
   async take(f){ // 드라이브 → PC
     const data=await (await this.api(`/drive/v3/files/${f.id}?alt=media`)).json();
-    const recs=[]; for(const r of data.receipts||[]){ try{ const b=await (await this.api(`/drive/v3/files/${r.id}?alt=media`)).blob(); const rc=await toJpeg(new File([b],'r.jpg',{type:'image/jpeg'})); rc.kind=r.kind||'영수증'; rc.ocr=r.ocr; recs.push(rc); }catch(e){ console.error(e); } }
+    const recs=[]; for(const r of data.receipts||[]){ try{ const b=await (await this.api(`/drive/v3/files/${r.id}?alt=media`)).blob(); const rc=await toJpeg(new File([b],'r.jpg',{type:'image/jpeg'})); rc.kind=r.kind||'영수증'; rc.ocr=r.ocr; if(r.rid) rc.id=r.rid; recs.push(rc); }catch(e){ console.error(e); } }
     const d=Object.assign(newDoc(data.type||'bill'),data,{id:uid(),receipts:recs,savedAt:null,fromPhone:true}); docs.unshift(d); cur=d.id;
     await this.api(`/drive/v3/files/${f.id}?fields=id`,{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({appProperties:{rp:'taken'}})});
   }
@@ -2358,13 +2425,18 @@ async function loadInbox(){
   await G.refreshCount();
   if(!G.items.length){ $('#inboxHint').innerHTML='폰에서 새로 보낸 영수증이 없어요.<br>폰에서 이 주소를 열고 영수증을 찍은 뒤 <b>작성 완료 → PC로 보내기</b>를 누르면 여기 떠요.'; return; }
   $('#inboxHint').textContent=`폰에서 보낸 문서 ${G.items.length}건이에요. 가져올 것을 골라 주세요.`;
-  $('#inboxList').innerHTML=G.items.map((f,i)=>{ const a=f.appProperties||{}; return `<button class="ib" data-ib="${i}" type="button"><span><b>${esc(a.title||f.name)}</b>${esc(SHORT[a.kind]||'')} · ${won(+a.amt||0)}원<br><small>${esc((f.createdTime||'').slice(5,16).replace('T',' '))}</small></span></button>`; }).join('');
+  const kst=t=>{ const x=new Date(t); if(isNaN(x)) return ''; return `${x.getMonth()+1}월 ${x.getDate()}일 ${String(x.getHours()).padStart(2,'0')}:${String(x.getMinutes()).padStart(2,'0')}`; };
+  G.items.forEach((_,i)=>G.sel.add(i));
+  $('#inboxHint').textContent=`폰에서 보낸 문서 ${G.items.length}건이에요. 가져올 문서에 체크해 주세요.`;
+  $('#inboxList').innerHTML=G.items.map((f,i)=>{ const a=f.appProperties||{}; return `<label class="ib on" data-ib="${i}"><input type="checkbox" checked data-ibc="${i}"><span class="cb" aria-hidden="true"></span><span><b>${esc(a.title||f.name)}</b>${esc(SHORT[a.kind]||'')} · ${won(+a.amt||0)}원<br><small>${esc(kst(f.createdTime))} 보냄</small></span></label>`; }).join('');
+  updInboxBtn();
 }
 $('#driveIn').onclick=openInbox;
 $('#inboxReload').onclick=loadInbox;
-$('#inboxList').onclick=e=>{ const b=e.target.closest('[data-ib]'); if(!b) return; const i=+b.dataset.ib; G.sel.has(i)?G.sel.delete(i):G.sel.add(i); b.classList.toggle('on'); };
+function updInboxBtn(){ const n=G.sel.size; $('#inboxOk').textContent=n?`체크한 ${n}건 가져오기`:'가져올 문서에 체크해 주세요'; $('#inboxOk').disabled=!n; }
+$('#inboxList').onchange=e=>{ const c=e.target.closest('[data-ibc]'); if(!c) return; const i=+c.dataset.ibc; c.checked?G.sel.add(i):G.sel.delete(i); c.closest('.ib').classList.toggle('on',c.checked); updInboxBtn(); };
 $('#inboxOk').onclick=async()=>{
-  const pick=[...G.sel].map(i=>G.items[i]); if(!pick.length){ toast('가져올 문서를 눌러서 골라 주세요'); return; }
+  const pick=[...G.sel].map(i=>G.items[i]); if(!pick.length){ toast('가져올 문서에 체크해 주세요'); return; }
   $('#inboxOk').disabled=true; toast('가져오는 중…');
   try{ for(const f of pick) await G.take(f); toast(`${pick.length}건을 가져왔어요`); $('#mInbox').classList.remove('on'); setView('edit'); selRc=0; refresh(true); }
   catch(e){ console.error(e); toast('가져오지 못했어요: '+e.message); }
@@ -2518,7 +2590,7 @@ function korWon(n){ n=Math.floor(Math.abs(+n||0)); if(!n) return '영'; const D=
 const _openConfirm=openConfirm;
 openConfirm=function(){ const d=curDoc(); if(!d) return; const t=totalOf(d);
   $('#cfTot').innerHTML=`<span class="lb">${SHORT[d.type]} 합계</span><b>${won(t)}<i>원</i></b><small>일금 ${korWon(t)}원정</small>`;
-  _openConfirm(); const top=()=>{ const b=$('#pvbody'); if(b) b.scrollTop=0; }; top(); requestAnimationFrame(top); setTimeout(top,80); setTimeout(top,300); };
+  _openConfirm(); };
 $('#btnConfirm').onclick=()=>openConfirm(); $('#btnPv').onclick=()=>openConfirm();
 const _showDone=showDone;
 showDone=function(d,where,parts){ _showDone(d,where,parts); $('#doneInfo').insertAdjacentHTML('afterbegin',`<span>합계 <b>${won(totalOf(d))}원</b></span>`); };
@@ -2571,7 +2643,7 @@ function splitPapers(file){ return new Promise(res=>{ if(!/^image\//.test(file.t
       o.toBlob(b=>ok(new File([b],(file.name||'photo').replace(/\.\w+$/,'')+`_${ix+1}.jpg`,{type:'image/jpeg'})),'image/jpeg',0.92); }))).then(fs=>res(fs));
   }catch(e){ console.error(e); URL.revokeObjectURL(u); res([file]); } };
   im.onerror=()=>{ URL.revokeObjectURL(u); res([file]); }; im.src=u; }); }
-window.RP_dbg={splitPapers,showDone:(...a)=>showDone(...a)};
+window.RP_dbg={splitPapers,showDone:(...a)=>showDone(...a),pdf:async d=>jpegsToPdf(await pagesJpeg(d)),inbox:(items)=>{ G.items=items; G.refreshCount=async()=>{}; return loadInbox(); }};
 const _addImages=addImages;
 addImages=async function(files){ const out=[]; for(const f of files){ out.push(...await splitPapers(f)); }
   if(out.length>files.length) toast(`사진 속 종이 ${out.length-files.length+1}장을 찾아 나눠서 읽어요`);
@@ -2629,13 +2701,17 @@ if(inApp&&!standalone()){ const android=/Android/i.test(navigator.userAgent);
 const _mSend2=$('#mSend').onclick;
 $('#mSend').onclick=()=>{ _mSend2(); const d=curDoc(); const E=check(d||{}).E||[]; const sh=$('#mShare'); const has=d&&d.receipts.length;
   if(E.length){ sh.disabled=!has; sh.innerHTML=`영수증 사진만 텔레그램으로 보내기<small>${has?`빠진 부분이 있어서 한글 파일 대신 사진 ${d.receipts.length}장을 보내요`:'올린 영수증 사진이 없어요'}</small>`; sh.dataset.mode='photo'; }
-  else { sh.disabled=false; sh.innerHTML='텔레그램으로 보내기<small>공유 창이 뜨면 텔레그램을 골라 한글 파일을 보내요</small>'; sh.dataset.mode='hwpx'; } };
+  else { sh.disabled=false; sh.innerHTML='텔레그램으로 보내기<small>서류와 영수증을 PDF 한 파일로 보내요. 공유 창에서 텔레그램을 골라요</small>'; sh.dataset.mode='hwpx'; } };
 const _mShare=$('#mShare').onclick;
-$('#mShare').onclick=async()=>{ if($('#mShare').dataset.mode!=='photo') return _mShare(); const d=curDoc(); if(!d) return;
+$('#mShare').onclick=async()=>{ const d=curDoc(); if(!d) return;
+  if($('#mShare').dataset.mode!=='photo'){ toast('PDF 만드는 중…'); try{ const pdf=jpegsToPdf(await pagesJpeg(d)); const file=new File([pdf],fileName(d)+'.pdf',{type:'application/pdf'});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){ await navigator.share({files:[file],title:fileName(d)}); $('#mSendSheet').classList.remove('on'); }
+      else { saveBlob(pdf,file.name); errToast(inApp?'이 화면에서는 바로 보낼 수 없어요. 영수증패스 아이콘이나 크롬으로 열어 주세요':'이 폰에서는 바로 보낼 수 없어서 PDF로 저장했어요'); }
+    }catch(err){ if(err&&err.name==='AbortError') return; console.error(err); errToast('보내지 못했어요. 잠시 뒤 다시 눌러 주세요'); } return; }
   try{ const files=d.receipts.map((r,i)=>new File([r.blob],`영수증_${i+1}.jpg`,{type:r.blob.type||'image/jpeg'}));
     if(navigator.canShare&&navigator.canShare({files})){ await navigator.share({files,title:'영수증 사진'}); $('#mSendSheet').classList.remove('on'); }
     else toast(inApp?'이 화면에서는 보내기가 막혀 있어요. 크롬에서 열어 주세요':'이 폰에서는 사진 보내기가 안 돼요');
-  }catch(err){ if(err&&err.name==='AbortError') return; console.error(err); toast('보내지 못했어요: '+(err.message||'')); } };
+  }catch(err){ if(err&&err.name==='AbortError') return; console.error(err); errToast('보내지 못했어요. 잠시 뒤 다시 눌러 주세요'); } };
 
 
 /* ---------------- 도움말 ---------------- */
@@ -2643,7 +2719,7 @@ const HELP_G=[["① 바로가기 만들기 (처음 한 번)", ["<b>PC</b>: 크�
 if(window.RP_dbg) RP_dbg.HELP={G:HELP_G,F:HELP_F};
 
 /* 사용법: 실제 화면 그림으로 */
-const HELP_S=[{"t": "① 바로가기 만들기", "steps": [{"h": "바로가기 만들기", "pc": "크롬이나 엣지로 영수증 하이패스를 열면 오른쪽 위에 <b>바탕화면에 바로가기 만들기</b> 버튼이 보여요. 누른 뒤 <b>설치</b>를 누르면 바탕화면에 아이콘이 생겨요.", "m": "링크를 <b>크롬</b>으로 열면 화면 맨 위에 <b>홈 화면에 바로가기 추가</b> 안내가 떠요. 노란 <b>추가</b>를 누르세요.", "img": "1a", "im": {"m": "m_1a", "pc": "pc_1a"}}, {"h": "다음부터는 아이콘으로 열기", "d": "바탕화면이나 홈 화면의 <b>영수증패스</b> 아이콘을 누르면 바로 열려요. 카톡·텔레그램 안에서 링크로 열면 보내기가 안 될 수 있어요.", "im": {"m": null, "pc": null}}]}, {"t": "② 서류 만들기", "steps": [{"h": "노란 ＋ 누르기", "d": "작성 칸 위쪽 검은 줄 맨 오른쪽에 있는 노란 테두리 <b>＋</b>를 누르세요.", "img": "2a", "im": {"m": "m_2a", "pc": "pc_2a"}}, {"h": "만들 서류 고르기", "d": "<b>비용청구서 · 출장보고서 · 기안서</b> 중 하나를 누르면 새 서류가 열려요. 서류마다 색이 달라서 여러 개를 열어도 헷갈리지 않아요.", "img": "2b", "im": {"m": "m_2b", "pc": "pc_2b"}}, {"h": "영수증 올리기", "pc": "회색 칸의 노란 <b>카메라</b>를 눌러 사진을 고르거나, 사진 파일을 회색 칸에 끌어다 놓으세요. 여러 장을 한꺼번에 올려도 돼요.", "m": "화면 맨 아래 왼쪽 <b>영수증 찍기</b>를 누르고 영수증을 찍으세요. 계속 찍으면 같은 서류에 한 장씩 쌓여요.", "img": "2c", "im": {"m": "m_2c", "pc": "pc_2c"}}, {"h": "노란 형광펜과 비교하기", "d": "날짜와 금액이 자동으로 들어가요. 사진 속 <b>노란 형광펜</b> 부분과 오른쪽 날짜·금액이 같은지 보세요. 다르면 그 칸을 눌러 고치면 돼요.", "img": "2d", "imgm": "pc_2d", "im": {"m": "pc_2d", "pc": "pc_2d"}}, {"h": "제목 쓰기", "d": "<b>제목</b> 칸에 예: \"12/17 야근 식대\"처럼 쓰세요. 아래 적요에도 똑같이 들어가요.", "img": "2e", "im": {"m": "m_2e", "pc": "pc_2e"}}, {"h": "저장 단계로", "pc": "아래 노란 <b>적요 쓰고 저장 단계로</b>를 누르세요.", "m": "화면 맨 아래 오른쪽 노란 <b>작성 완료</b>를 누르세요.", "img": "2f", "im": {"m": "m_2f", "pc": "pc_2f"}}, {"h": "확인하고 저장", "pc": "출력 모습을 보고 <b>출력 모습을 직접 확인했어요</b>에 체크한 뒤, 노란 <b>저장하기</b>를 누르세요.", "m": "<b>PC로 보내기</b>나 <b>텔레그램으로 보내기</b> 중 하나를 누르세요.", "img": "2g", "imgm": "m_3a", "im": {"m": "m_3a", "pc": "pc_2g"}}]}, {"t": "③ 폰 ↔ PC 연동", "steps": [{"h": "폰에서 보내기", "d": "폰에서 <b>작성 완료 → PC로 보내기</b>를 누르세요. 처음 한 번만 구글 로그인을 해요.", "img": "3a", "imgpc": "m_3a", "im": {"m": "m_3a", "pc": "m_3a"}}, {"h": "PC에서 받기", "d": "PC 오른쪽 위 흰 버튼 <b>폰에서 찍은 영수증</b>을 누르면 폰에서 보낸 서류가 떠요. 폰과 PC가 <b>같은 구글 계정</b>이어야 해요.", "img": "3b", "imgm": "pc_3b", "im": {"m": "pc_3b", "pc": "pc_3b"}}]}, {"t": "④ 사진 잘 찍기", "steps": [{"h": "펴서, 밝은 곳에서, 한 장씩", "d": "구겨진 영수증은 펴고, 그림자 없이 밝은 곳에서, 화면에 영수증이 꽉 차게 찍으세요.", "im": {"m": null, "pc": null}}, {"h": "\"못 읽었어요\"가 뜨면", "d": "다시 찍거나, 날짜·금액 칸을 눌러 직접 입력하세요. 서류는 똑같이 만들어져요.", "im": {"m": null, "pc": null}}]}, {"t": "⑤ 꼭 기억!", "steps": [{"h": "저장 전에 꼭 확인", "d": "자동으로 읽은 숫자는 <b>틀릴 수 있어요.</b> 저장 전에 노란 형광펜과 꼭 비교하세요.", "im": {"m": null, "pc": null}}, {"h": "내 것은 나만 봐요", "d": "사진과 서류는 <b>내 폰·PC와 내 구글 드라이브에만</b> 저장돼요.", "im": {"m": null, "pc": null}}]}]; let helpSec=0;
+const HELP_S=[{"t": "① 바로가기 만들기", "steps": [{"h": "바로가기 만들기", "pc": "크롬이나 엣지로 영수증 하이패스를 열면 오른쪽 위에 <b>바탕화면에 바로가기 만들기</b> 버튼이 보여요. 누른 뒤 <b>설치</b>를 누르면 바탕화면에 아이콘이 생겨요.", "m": "링크를 <b>크롬</b>으로 열면 화면 맨 위에 <b>홈 화면에 바로가기 추가</b> 안내가 떠요. 노란 <b>추가</b>를 누르세요.", "img": "1a", "im": {"m": "m_1a", "pc": "pc_1a"}}, {"h": "다음부터는 아이콘으로 열기", "d": "바탕화면이나 홈 화면의 <b>영수증패스</b> 아이콘을 누르면 바로 열려요. 카톡·텔레그램 안에서 링크로 열면 보내기가 안 될 수 있어요.", "im": {"m": null, "pc": null}}]}, {"t": "② 서류 만들기", "steps": [{"h": "노란 ＋ 누르기", "d": "작성 칸 위쪽 검은 줄 맨 오른쪽에 있는 노란 테두리 <b>＋</b>를 누르세요.", "img": "2a", "im": {"m": "m_2a", "pc": "pc_2a"}}, {"h": "만들 서류 고르기", "d": "<b>비용청구서 · 출장보고서 · 기안서</b> 중 하나를 누르면 새 서류가 열려요. 서류마다 색이 달라서 여러 개를 열어도 헷갈리지 않아요.", "img": "2b", "im": {"m": "m_2b", "pc": "pc_2b"}}, {"h": "영수증 올리기", "pc": "회색 칸의 노란 <b>카메라</b>를 눌러 사진을 고르거나, 사진 파일을 회색 칸에 끌어다 놓으세요. 여러 장을 한꺼번에 올려도 돼요.", "m": "화면 맨 아래 왼쪽 <b>영수증 찍기</b>를 누르고 영수증을 찍으세요. 계속 찍으면 같은 서류에 한 장씩 쌓여요.", "img": "2c", "im": {"m": "m_2c", "pc": "pc_2c"}}, {"h": "노란 형광펜과 비교하기", "d": "날짜와 금액이 자동으로 들어가요. 사진 속 <b>노란 형광펜</b> 부분과 오른쪽 날짜·금액이 같은지 보세요. 다르면 그 칸을 눌러 고치면 돼요.", "img": "2d", "imgm": "pc_2d", "im": {"m": "pc_2d", "pc": "pc_2d"}}, {"h": "제목 쓰기", "d": "<b>제목</b> 칸에 예: \"12/17 야근 식대\"처럼 쓰세요. 아래 적요에도 똑같이 들어가요.", "img": "2e", "im": {"m": "m_2e", "pc": "pc_2e"}}, {"h": "작성 완료 누르기", "pc": "작성 칸 아래 노란 <b>작성 완료</b>를 누르세요. 위쪽 1·2·3 중 <b>3</b>을 눌러도 돼요.", "m": "화면 맨 아래 오른쪽 노란 <b>작성 완료</b>를 누르세요.", "img": "2f", "im": {"m": "m_2f", "pc": null}}, {"h": "확인하고 저장·인쇄", "pc": "<b>다 됐어요</b> 화면 오른쪽 아래 출력 모습을 보고 <b>직접 확인했어요</b>에 체크한 뒤, 노란 <b>저장하기</b>를 누르세요. 저장 없이 <b>바로 인쇄</b>만 해도 돼요.", "m": "<b>PC로 보내기</b>나 <b>텔레그램으로 보내기</b>(PDF로 보내져요) 중 하나를 누르세요.", "img": "2g", "imgm": "m_3a", "im": {"m": "m_3a", "pc": null}}]}, {"t": "③ 폰 ↔ PC 연동", "steps": [{"h": "폰에서 보내기", "d": "폰에서 <b>작성 완료 → PC로 보내기</b>를 누르세요. 처음 한 번만 구글 로그인을 해요.", "img": "3a", "imgpc": "m_3a", "im": {"m": "m_3a", "pc": "m_3a"}}, {"h": "PC에서 받기", "d": "PC 오른쪽 위 흰 버튼 <b>폰에서 찍은 영수증</b>을 누르면 폰에서 보낸 서류가 떠요. 폰과 PC가 <b>같은 구글 계정</b>이어야 해요.", "img": "3b", "imgm": "pc_3b", "im": {"m": "pc_3b", "pc": "pc_3b"}}]}, {"t": "④ 사진 잘 찍기", "steps": [{"h": "펴서, 밝은 곳에서, 한 장씩", "d": "구겨진 영수증은 펴고, 그림자 없이 밝은 곳에서, 화면에 영수증이 꽉 차게 찍으세요.", "im": {"m": null, "pc": null}}, {"h": "\"못 읽었어요\"가 뜨면", "d": "다시 찍거나, 날짜·금액 칸을 눌러 직접 입력하세요. 서류는 똑같이 만들어져요.", "im": {"m": null, "pc": null}}]}, {"t": "⑤ 꼭 기억!", "steps": [{"h": "저장 전에 꼭 확인", "d": "자동으로 읽은 숫자는 <b>틀릴 수 있어요.</b> 저장 전에 노란 형광펜과 꼭 비교하세요.", "im": {"m": null, "pc": null}}, {"h": "내 것은 나만 봐요", "d": "사진과 서류는 <b>내 폰·PC와 내 구글 드라이브에만</b> 저장돼요.", "im": {"m": null, "pc": null}}]}]; let helpSec=0;
 function guideHTML(){ const dev=isPhone()?'m':'pc'; const sec=HELP_S[helpSec];
   return `<div class="chips">${HELP_S.map((s,k)=>`<button type="button" class="${k===helpSec?'on':''}" data-sec="${k}">${s.t}</button>`).join('')}</div>`
    +sec.steps.map((st,k)=>{ const im=st.im[dev]; const d=st[dev]||st.d; return `<div class="gstep"><div class="gh"><span class="gn">${k+1}</span><b>${st.h}</b></div><p>${d}</p>${im?`<img src="img/guide/${im}.jpg" alt="${st.h} 화면" loading="lazy">`:''}</div>`; }).join('')
@@ -2675,6 +2751,70 @@ function openHelp(tab){ let p=document.getElementById('helpP'); if(!p){ p=docume
 (function(){ const sg=document.querySelector('.band .side2'); const b=document.createElement('button'); b.type='button'; b.className='helpbtn'; b.id='btnHelp'; b.innerHTML='<span>?</span><em>자주 묻는 질문</em>'; b.title='자주 묻는 질문';
   (sg||document.querySelector('.band')).appendChild(b); b.onclick=()=>openHelp('f');
   if(sg&&getComputedStyle(sg).display==='none'){ document.querySelector('.band').appendChild(b); } })();
+
+
+/* ---------------- PDF 만들기 (텔레그램용) ---------------- */
+async function pagesJpeg(d){ if(!window.html2canvas) throw new Error('이미지 변환 도구를 불러오지 못했어요');
+  const box=document.createElement('div'); box.style.cssText='position:fixed;left:-99999px;top:0;background:#fff'; box.innerHTML=docHTML(d); document.body.appendChild(box);
+  await Promise.all([...box.querySelectorAll('img')].map(i=>i.complete?1:new Promise(r=>{i.onload=i.onerror=r;})));
+  const out=[]; for(const p of box.querySelectorAll('.page')){ const c=await html2canvas(p,{scale:2,backgroundColor:'#fff',useCORS:true}); const b=await new Promise(r=>c.toBlob(r,'image/jpeg',0.9)); out.push({bytes:new Uint8Array(await b.arrayBuffer()),w:c.width,h:c.height}); }
+  box.remove(); return out; }
+function jpegsToPdf(pages){ const enc=new TextEncoder(); const parts=[]; let len=0; const offs=[];
+  const push=x=>{ const u=typeof x==='string'?enc.encode(x):x; parts.push(u); len+=u.length; };
+  const obj=(n,body)=>{ offs[n]=len; push(`${n} 0 obj\n`); if(Array.isArray(body)) body.forEach(push); else push(body); push('\nendobj\n'); };
+  push('%PDF-1.4\n%\xE2\xE3\xCF\xD3\n'); const W=595.28,H=841.89; const n=pages.length; const kids=[];
+  pages.forEach((pg,i)=>{ const po=3+i*3, io=po+1, co=po+2; kids.push(`${po} 0 R`);
+    const s=Math.min(W/pg.w,H/pg.h), dw=pg.w*s, dh=pg.h*s, x=(W-dw)/2, y=H-dh; const cs=`q ${dw.toFixed(2)} 0 0 ${dh.toFixed(2)} ${x.toFixed(2)} ${y.toFixed(2)} cm /Im${i} Do Q`;
+    obj(po,`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${W} ${H}] /Resources << /XObject << /Im${i} ${io} 0 R >> >> /Contents ${co} 0 R >>`);
+    obj(io,[`<< /Type /XObject /Subtype /Image /Width ${pg.w} /Height ${pg.h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${pg.bytes.length} >>\nstream\n`,pg.bytes,'\nendstream']);
+    obj(co,`<< /Length ${cs.length} >>\nstream\n${cs}\nendstream`); });
+  obj(1,'<< /Type /Catalog /Pages 2 0 R >>'); obj(2,`<< /Type /Pages /Kids [${kids.join(' ')}] /Count ${n} >>`);
+  const total=3+n*3; const xo=len; let xr=`xref\n0 ${total}\n0000000000 65535 f \n`; for(let k=1;k<total;k++) xr+=String(offs[k]).padStart(10,'0')+' 00000 n \n';
+  push(xr+`trailer\n<< /Size ${total} /Root 1 0 R >>\nstartxref\n${xo}\n%%EOF`);
+  const outb=new Uint8Array(len); let o=0; parts.forEach(u=>{ outb.set(u,o); o+=u.length; }); return new Blob([outb],{type:'application/pdf'}); }
+function errToast(msg){ const t=$('#toast'); t.innerHTML=`<span class="tw">!</span>${esc(msg)}`; t.classList.add('on','err'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('on','err'),3600); }
+
+/* ---------------- 영수증 크게 보기: 끌기 · 두 손가락 · 휠 ---------------- */
+(function(){ let z={s:1,x:0,y:0}, pts=new Map(), start=null;
+  const tgt=()=>document.querySelector('#stage .rcbox .rcsvg');
+  const apply=()=>{ const t=tgt(); if(t){ t.style.transform=`translate(${z.x}px,${z.y}px) scale(${z.s})`; t.style.cursor=z.s>1?'grab':'zoom-in'; } const h=document.getElementById('zhint'); if(h) h.textContent=z.s>1?`${Math.round(z.s*100)}% · 두 번 눌러 원래대로`:'두 손가락으로 벌리거나, 끌어서 확대해 보세요'; };
+  window.resetZoom=()=>{ z={s:1,x:0,y:0}; apply(); };
+  const st=()=>document.getElementById('stage');
+  document.addEventListener('pointerdown',e=>{ const t=tgt(); if(!t||!e.target.closest('#stage .rcbox')) return; pts.set(e.pointerId,{x:e.clientX,y:e.clientY}); e.target.setPointerCapture&&e.target.setPointerCapture(e.pointerId);
+    if(pts.size===2){ const [a,b]=[...pts.values()]; start={d:Math.hypot(a.x-b.x,a.y-b.y),s:z.s,mx:(a.x+b.x)/2,my:(a.y+b.y)/2,x:z.x,y:z.y}; } else start={px:e.clientX,py:e.clientY,x:z.x,y:z.y}; });
+  document.addEventListener('pointermove',e=>{ if(!pts.has(e.pointerId)) return; pts.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    if(pts.size===2&&start&&start.d){ const [a,b]=[...pts.values()]; const d=Math.hypot(a.x-b.x,a.y-b.y); z.s=Math.max(1,Math.min(5,start.s*d/start.d)); const mx=(a.x+b.x)/2,my=(a.y+b.y)/2; z.x=start.x+(mx-start.mx); z.y=start.y+(my-start.my); apply(); e.preventDefault(); }
+    else if(pts.size===1&&start&&start.px!=null&&z.s>1){ z.x=start.x+(e.clientX-start.px); z.y=start.y+(e.clientY-start.py); apply(); e.preventDefault(); } },{passive:false});
+  const up=e=>{ pts.delete(e.pointerId); if(pts.size===1){ const [a]=[...pts.values()]; start={px:a.x,py:a.y,x:z.x,y:z.y}; } else if(!pts.size) start=null; };
+  document.addEventListener('pointerup',up); document.addEventListener('pointercancel',up);
+  document.addEventListener('wheel',e=>{ if(!tgt()||!e.target.closest('#stage .rcbox')) return; e.preventDefault(); z.s=Math.max(1,Math.min(5,z.s*(e.deltaY<0?1.15:1/1.15))); if(z.s===1){ z.x=0; z.y=0; } apply(); },{passive:false});
+  document.addEventListener('dblclick',e=>{ if(!e.target.closest('#stage .rcbox')) return; if(z.s>1) resetZoom(); else { z.s=2.5; apply(); } });
+  new MutationObserver(()=>{ if(tgt()&&!tgt().dataset.z){ tgt().dataset.z=1; z={s:1,x:0,y:0}; apply(); } }).observe(document.body,{childList:true,subtree:true});
+})();
+
+
+/* ---------------- 1·2·3 눌러서 이동 · 뒤로 가기 = 앞 단계 ---------------- */
+function goStep(n){ const v=$('#vDone');
+  if(n===3){ if(!curDoc()) return; if(v.hidden) openConfirm(); return; }
+  v.hidden=true; if(ui.view==='docs') setView('edit');
+  if(n===1){ const ph=$('#photo'); ph&&ph.scrollIntoView({behavior:'smooth',block:'start'}); window.scrollTo({top:0,behavior:'smooth'}); }
+  if(n===2){ const ed=$('#editor'); const tgt=ed.querySelector('.bad, .miss, input.auto')||ed.querySelector('[data-k="title"]'); if(tgt){ tgt.scrollIntoView({behavior:'smooth',block:'center'}); setTimeout(()=>tgt.focus&&tgt.focus({preventScroll:true}),350); } } }
+document.querySelectorAll('#road .dots i').forEach(i=>{ i.setAttribute('role','button'); i.tabIndex=0; i.title=['영수증 올리기','읽은 값 확인','작성 완료'][+i.dataset.step-1]+'로 가기';
+  i.addEventListener('click',()=>goStep(+i.dataset.step)); i.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); goStep(+i.dataset.step); } }); });
+// 화면 상태를 브라우저 기록에 남겨서, 뒤로 가기를 누르면 앞 단계로
+const NAV={ cur(){ const h=$('#helpP'); if(h&&h.classList.contains('on')) return 'help'; if(document.querySelector('.modal.on, #mSendSheet.on, #mPv.on')) return 'modal'; if(!$('#vDone').hidden) return 'final'; if(ui.view==='docs') return 'docs'; return 'edit'; },
+  last:'edit', busy:false };
+history.replaceState({rp:'edit'},'');
+new MutationObserver(()=>{ if(NAV.busy) return; const c=NAV.cur(); if(c!==NAV.last){ if(c!=='edit'&&NAV.last==='edit') history.pushState({rp:c},''); else if(c!=='edit') history.replaceState({rp:c},''); NAV.last=c; } }).observe(document.body,{subtree:true,attributes:true,attributeFilter:['class','hidden']});
+window.addEventListener('popstate',e=>{ NAV.busy=true; const c=NAV.cur();
+  if(c==='help'){ const h=$('#helpP'); h.classList.remove('on'); document.body.classList.remove('helpdock'); }
+  else if(c==='modal'){ document.querySelectorAll('.modal.on, #mSendSheet.on, #mPv.on').forEach(m=>m.classList.remove('on')); }
+  else if(c==='final'){ $('#vDone').hidden=true; }
+  else if(c==='docs'){ setView('edit'); }
+  setTimeout(()=>{ NAV.busy=false; NAV.last=NAV.cur(); if(NAV.last!=='edit') history.pushState({rp:NAV.last},''); },0); });
+
+/* 미리보기: 긴 글은 칸 안에 들어가게 줄이기 */
+const _rp=renderPreview; renderPreview=function(){ _rp(); requestAnimationFrame(()=>document.querySelectorAll('#pvscale .ov').forEach(o=>{ if(o.scrollHeight<=o.clientHeight+1&&o.scrollWidth<=o.clientWidth+1) return; let f=100; while(f>55&&(o.scrollHeight>o.clientHeight+1||o.scrollWidth>o.clientWidth+1)){ f-=5; o.style.fontSize=f+'%'; o.querySelectorAll('*').forEach(x=>x.style.fontSize='inherit'); } })); };
 
 /* refresh 훅 */
 const _refresh2=refresh;
