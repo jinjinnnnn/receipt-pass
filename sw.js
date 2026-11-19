@@ -1,5 +1,5 @@
 /* 영수증 하이패스 서비스 워커: 화면은 새 버전 우선, 큰 파일은 저장해 둔 것 사용 */
-const V='rp-20261119115404';
+const V='rp-20261119132416';
 self.addEventListener('install',e=>{ self.skipWaiting(); });
 self.addEventListener('activate',e=>{ e.waitUntil((async()=>{ for(const k of await caches.keys()) if(k!==V) await caches.delete(k); await self.clients.claim(); })()); });
 self.addEventListener('fetch',e=>{

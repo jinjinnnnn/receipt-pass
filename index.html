@@ -954,6 +954,128 @@ button.plate:focus-visible{outline:3px solid #fff;outline-offset:3px}
 @media (max-width:860px) and (min-width:761px){.tgbig .tt{display:none}.band .tab span{display:none}}
 /* 세부 내용 적요 칸 넓게 */
 table.rows td input[data-c="desc"]{min-width:120px}
+/* v10 */
+.road2 b{display:none!important}
+.donev{grid-template-columns:minmax(0,1fr) minmax(360px,33vw) minmax(340px,400px)!important}
+.finpv{background:#2C2D30;padding:16px;display:flex;min-height:0}
+.finpv .pvwrap{flex:1;min-height:0;border:0;border-radius:10px;background:#E9E6DE;display:flex;flex-direction:column}
+.finpv .pvh{padding:10px 14px;font-weight:800;font-size:14px;background:#fff;border-bottom:1px solid var(--line)}
+.finpv .pvbody{flex:1;overflow:auto;padding:12px}
+.fin .bigacts{grid-template-columns:1fr}
+.fin .ba{padding:14px 16px}.fin .ba.p b{font-size:19px}
+.donev .pass{padding:0 40px 110px}
+.donev .pass .ok{font-size:64px}.donev .pass .slogan{font-size:68px}
+@media (max-width:1300px) and (min-width:761px){.donev{grid-template-columns:minmax(0,.7fr) minmax(320px,36vw) 340px!important}.donev .pass .ok{font-size:48px}.donev .pass .slogan{font-size:48px}}
+@media (max-width:760px){.donev{grid-template-columns:1fr!important;grid-template-rows:auto auto auto!important;overflow:auto}.finpv{min-height:60vh}}
+.qtip{position:relative;display:inline-flex;width:18px;height:18px;border-radius:50%;background:#1D1E20;color:#FFC400;font-size:11px;font-weight:800;align-items:center;justify-content:center;cursor:help;vertical-align:middle;margin-left:2px}
+.qtip .qtxt{display:none;position:absolute;left:0;top:24px;z-index:20;width:260px;background:#fff;color:#2B2A28;border:1.5px solid #1D1E20;border-radius:10px;padding:10px 12px;font-size:13px;font-weight:400;line-height:1.6;text-align:left;box-shadow:3px 3px 0 #FFC400;white-space:normal}
+.qtip:hover .qtxt,.qtip:focus .qtxt{display:block}.qtip:focus-visible{outline:2px solid #FFC400}
+@media (max-width:760px){.qtip .qtxt{position:fixed;left:16px;right:16px;top:auto;bottom:120px;width:auto}}
+.magbtn{position:absolute;right:12px;bottom:10px;z-index:3;border:1.5px solid #1D1E20;background:#FFC400;color:#1D1E20;font-weight:800;border-radius:999px;padding:8px 14px;font-size:14px;cursor:pointer}
+.magv{position:fixed;inset:0;z-index:500;background:#1D1E20;display:none;flex-direction:column}.magv.on{display:flex}
+.magv .mh{display:flex;align-items:center;gap:10px;padding:10px 14px;color:#fff}.magv .mh b{font-size:16px;flex:1}
+.magv .mz{display:flex;align-items:center;gap:6px}.magv .mz button{width:44px;height:44px;border-radius:10px;border:0;background:#FFC400;color:#1D1E20;font-size:22px;font-weight:800}
+.magv .mz em{font-style:normal;font-family:var(--num);min-width:52px;text-align:center}
+.magv .mx{height:44px;border:1.5px solid #fff;background:none;color:#fff;border-radius:10px;padding:0 14px;font-size:15px}
+.magv .mb{flex:1;overflow:auto;background:#3A3C40;-webkit-overflow-scrolling:touch}
+.magv .mi{margin:0 auto}.magv .mi .rcsvg{width:100%;height:auto;display:block}
+.magv .mf{margin:0;padding:8px 14px 14px;color:#BDBDB8;font-size:13px;text-align:center}
+@media (max-width:760px){.zhint{display:none}.rcbox{touch-action:auto}.magbtn{bottom:auto;top:10px;right:10px}}
+button.qtip{border:0;padding:0;font-family:var(--num)}
+.qnote{background:#FFF6D6;border:1.5px solid #1D1E20;border-radius:10px;padding:10px 14px;font-size:13.5px;line-height:1.7;margin:0 0 10px;box-shadow:3px 3px 0 #FFC400}
+.qnote[hidden]{display:none}
+/* v11 */
+.fin .checks{max-height:none!important;overflow:visible!important;height:auto!important}
+.fin .checks *{white-space:normal}
+.donev .pass{align-items:flex-start!important;padding-top:9vh!important}
+.donev .pass .ok{font-size:51px!important;gap:16px}.donev .pass .ck{width:60px;height:60px}.donev .pass .ck .ico{width:36px;height:36px}
+.donev .pass .slogan{font-size:54px!important;margin-top:14px}
+@media (max-width:1300px) and (min-width:761px){.donev .pass .ok{font-size:40px!important}.donev .pass .slogan{font-size:40px!important}}
+.seenbox{max-width:440px;text-align:center}.seenbox .bi{width:56px;height:56px;border-radius:50%;background:#FFC400;font-size:28px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:4px auto 10px}
+.seenbox h3{font-size:19px;margin:0 0 8px}.seenbox p{color:#555;line-height:1.6;margin:0 0 16px;font-size:15px}.seenbox .mfoot{justify-content:center}
+.fin .ba{padding:12px 14px}
+select[data-c="k"]:invalid,select[data-c="k"] option[value=""]{color:#C8402F}
+/* v12 */
+@media (min-width:761px){
+ .donev{grid-template-columns:clamp(280px,24vw,380px) minmax(0,1fr) minmax(340px,400px)!important}
+ .donev .pass{grid-column:1/3;grid-row:1;padding:0!important}
+ .donev .pass::after{display:none}
+ .donev .finpv{grid-column:2;grid-row:1;background:transparent;padding:clamp(180px,26vh,240px) 28px 24px 0;position:relative;z-index:1}
+ .donev .finpv .pvwrap{box-shadow:0 12px 40px rgba(0,0,0,.45)}
+ .donev .fin{grid-column:3;grid-row:1}
+ .donev .pass .txt{position:absolute;left:40px;top:clamp(28px,5vh,56px);text-align:left;z-index:2}
+}
+.donev .pass .ok{display:none!important}
+.donev .pass .slogan{font-size:70px!important;margin:0!important;line-height:1.08}
+@media (max-width:1300px) and (min-width:761px){.donev .pass .slogan{font-size:56px!important}}
+@media (max-width:760px){.donev .pass .slogan{font-size:46px!important}}
+.seenbox{max-width:520px!important;width:min(520px,92vw);padding:28px 28px 22px!important}
+.seenbox h3{font-size:23px!important;margin:4px 0 12px!important}
+.seenbox p{font-size:18px!important;line-height:1.65!important;color:#2B2A28!important;margin:0 0 6px!important;word-break:keep-all}
+.seenbox p.sm{font-size:15px!important;color:#6C6B67!important;margin-bottom:18px!important}
+.seenbox .sbtns{display:grid;gap:10px}
+.seenbox .sbtns [data-sn="ok"]{height:62px;font-size:20px;font-weight:800;border-radius:12px}
+.seenbox .sbtns [data-sn="no"]{height:46px;font-size:16px;border-radius:12px}
+/* v13: 미리보기를 칸으로 */
+@media (min-width:761px){
+ .donev{grid-template-columns:clamp(300px,24vw,380px) minmax(0,1fr) minmax(340px,400px)!important}
+ .donev .pass{grid-column:1;grid-row:1}
+ .donev .finpv{grid-column:2;grid-row:1;background:#2C2D30;padding:16px!important}
+ .donev .finpv .pvwrap{box-shadow:none}
+ .donev .pass .txt{left:auto;right:24px;top:28px;text-align:right}
+ .donev .pass .slogan{font-size:clamp(52px,4.9vw,70px)!important;line-height:1.05}
+ .rally{background-position:18% 62%!important}
+}
+/* v14: 사진은 원래대로 고정, 미리보기 칸은 팔꿈치부터 */
+@media (min-width:761px){
+ .donev .pass{grid-column:1/3!important;grid-row:1}
+ .rally{background-position:left 62%!important}
+ .donev .finpv{grid-column:2;grid-row:1;z-index:2}
+ .donev .pass .txt{left:0!important;right:auto!important;width:clamp(300px,24vw,380px);box-sizing:border-box;padding-right:24px}
+}
+@media (max-width:760px){
+ .donev .pass{min-height:200px;padding:24px 20px!important;align-items:flex-end!important}
+ .donev .pass::after{display:none}
+ .donev .pass .txt{position:relative!important;right:auto;top:auto;width:100%;text-align:right}
+ .donev .pass .slogan{font-size:38px!important;line-height:1.15}
+ .donev .pass .slogan br{display:none}
+ .donev .pass .slogan br:nth-of-type(2){display:inline}
+}
+@media (max-width:760px){
+ .donev{grid-template-columns:minmax(0,1fr)!important;overflow-x:hidden}
+ .donev>*{min-width:0}
+ .donev .finpv{padding:12px!important;min-height:0}
+ .donev .finpv .pvbody{max-height:70vh}
+ .donev .fin{padding:16px!important}
+ .donev .pass{justify-content:flex-end}
+}
+/* v15 시안 */
+@media (min-width:761px){
+ .donev{grid-template-columns:minmax(0,1fr) 33.3vw clamp(280px,21vw,320px)!important}
+ .donev .pass{grid-column:1/3!important}
+ .donev .pass .txt{width:auto!important;left:40px!important;right:auto!important;top:40px!important;text-align:left!important;padding:0!important}
+ .donev .pass .slogan{font-size:clamp(44px,4.2vw,64px)!important;line-height:1.12}
+ .donev .finpv{grid-column:2;padding:0!important;background:#E9E6DE;border-left:6px double #FFC400}
+ .donev .finpv .pvwrap{border-radius:0!important;background:transparent;box-shadow:none!important}
+ .donev .finpv .pvh{background:#1D1E20;color:#fff;border:0;padding:12px 16px;font-size:14px}.donev .finpv .pvh .hint{color:#BDBDB8}
+ .donev .finpv .pvbody{padding:14px}
+ .fin{padding:18px 16px!important}
+ .fin .ba{grid-template-columns:44px 1fr;padding:11px 12px}.fin .ba .bi{width:44px;height:44px}.fin .ba b{font-size:16px}
+}
+.fin .cftot{display:block;padding:16px 18px}
+.fin .cftot .lb{display:block;font-size:14px;color:#D8D6D0;margin-bottom:4px}
+.fin .cftot b{font-size:44px;line-height:1.05;letter-spacing:-.02em}.fin .cftot b i{font-size:20px}
+.fin .cftot small{display:none}
+@media (max-width:760px){.donev .pass .slogan br{display:inline!important}}
+.fin .checks{padding:0!important;background:none!important;border:0!important}
+.fin .chk{display:block!important;padding:12px 14px!important;margin:0 0 8px!important;border-radius:10px}
+.fin .chk>b{display:block!important;margin:0 0 4px!important;white-space:nowrap;writing-mode:horizontal-tb}
+.fin .chk ul{margin:0;padding-left:18px;font-size:13.5px;line-height:1.55}
+/* v16 시안 */
+@media (min-width:761px){
+ .donev{grid-template-columns:minmax(0,1fr) minmax(0,1fr) clamp(280px,21vw,320px)!important}
+ .donev .pass .txt{left:0!important;right:auto!important;width:calc((100vw - clamp(280px,21vw,320px))/2)!important;box-sizing:border-box;padding:0 32px 0 0!important;text-align:right!important;top:36px!important}
+}
 
 </style>
 <link rel="manifest" href="manifest.webmanifest">
@@ -1041,12 +1163,14 @@ table.rows td input[data-c="desc"]{min-width:120px}
     <div class="txt"><div class="ok"><span class="ck"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span id="doneWord">다 됐어요</span></div><p class="slogan">“서류는 빠르게,<br>투쟁은 힘차게!”</p></div>
     <div class="info" id="doneInfo"></div>
   </div>
+  <div class="finpv"><div class="pvwrap"><div class="pvh">출력 미리보기 <span class="hint" id="pvhint"></span></div><div class="pvbody" id="pvbody"><div class="pvscale" id="pvscale"></div></div></div></div>
   <aside class="next2 fin">
     <div class="cftot" id="cfTot"></div>
     <div class="checks" id="checks"></div>
     <div class="bigacts">
-      <button class="ba p" data-done="save" type="button"><span class="bi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg></span><b id="saveLbl">저장하기</b><small id="saveSub">정해 둔 폴더에 저장</small></button>
-      <button class="ba" data-done="print" type="button"><span class="bi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span><b>바로 인쇄</b><small>저장 안 해도 돼요</small></button>
+      <button class="ba p" data-done="print" type="button"><span class="bi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span><b>바로 인쇄</b><small>저장 안 해도 바로 출력돼요</small></button>
+      <button class="ba" data-done="both" type="button"><span class="bi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V2h12v7"/><rect x="6" y="14" width="12" height="8"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5"/><path d="M19 14v6m-3-3 3 3 3-3"/></svg></span><b>인쇄하고 저장하기</b><small>출력하고 파일도 남겨요</small></button>
+      <button class="ba" data-done="save" type="button"><span class="bi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg></span><b id="saveLbl">저장하기</b><small id="saveSub">정해 둔 폴더에 저장</small></button>
       <button class="ba" data-done="edit" type="button"><span class="bi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span><b>다시 고치기</b><small>작성 화면으로</small></button>
       <button class="ba" data-done="docs" type="button"><span class="bi"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span><b>내 문서</b><small id="donePath">저장한 서류 보기</small></button>
     </div>
@@ -1056,8 +1180,8 @@ table.rows td input[data-c="desc"]{min-width:120px}
       <p class="fhint">폴더를 고를 때 "열 수 없음"이 뜨면, <b>문서</b> 안에 <b>새 폴더</b>(예: 영수증 하이패스)를 만들어 그 폴더를 골라 주세요.</p>
       <label class="tog"><span>폰에서도 볼 수 있게 드라이브에 보관</span><span class="swg"><small id="drvTogTxt">꺼짐</small><input type="checkbox" id="drvTog" class="swi"></span></label>
     </details>
-    <label class="ck"><input type="checkbox" id="seenOk"> 아래 출력 모습을 직접 확인했어요</label>
-    <div class="pvwrap"><div class="pvbody" id="pvbody"><div class="pvscale" id="pvscale"></div></div><div class="pvbar"><span class="hint" id="pvhint"></span></div></div>
+    <input type="checkbox" id="seenOk" hidden>
+    
     <button class="nxt-cta" data-done="new" type="button">다음 영수증 쓰기 <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
     <button id="btnDown" type="button" hidden></button><small id="doneDrive" hidden></small>
   </aside>
@@ -1136,12 +1260,12 @@ const STAMP = '\u{F012B}';
 const TYPES = {bill:'비용청구서', trip:'출장보고서', gian:'기안서(내부결재)'};
 const BILL_MAX = 9;
 const TRIP_CATS = ['식대','숙박비','교통비'];
-const TRIP_UI=['교통비','숙박비','조식','중식','석식','직접 입력'];
+const TRIP_UI=['교통비','유류비','숙박비','조식','중식','석식','직접 입력'];
 const MEALS=['조식','중식','석식'];
-function itemK(r){ if(r.k) return r.k; return r.cat==='식대'?'중식':r.cat; }
-function catOfK(k,label){ return MEALS.includes(k)?'식대':k==='직접 입력'?guessCat(label||''):k; }
-function mealByTime(t){ if(t==null) return '중식'; return t<10.5?'조식':t<16?'중식':'석식'; }
-function outDesc(r){ const k=itemK(r); if(k==='직접 입력'){ const l=(r.label||'').trim(); return [l,(r.desc||'').trim()].filter(Boolean).join(' · '); } if(MEALS.includes(k)) return (r.desc||'').trim()||k; return r.desc; }
+function itemK(r){ if(r.k!=null) return r.k; return r.cat==='식대'?'중식':r.cat; }
+function catOfK(k,label){ return MEALS.includes(k)?'식대':k==='유류비'?'교통비':k==='직접 입력'?guessCat(label||''):k; }
+function mealByTime(t){ if(t==null) return ''; return t<10.5?'조식':t<16?'중식':'석식'; }
+function outDesc(r){ const k=itemK(r); if(k==='유류비'){ const t=(r.desc||'').trim(); return t?(/유류|주유/.test(t)?t:'유류비 · '+t):'유류비'; } if(k==='직접 입력'){ const l=(r.label||'').trim(); return [l,(r.desc||'').trim()].filter(Boolean).join(' · '); } if(MEALS.includes(k)) return (r.desc||'').trim()||k; return r.desc; }
 function kSum(d,k){ return tripItems(d).filter(r=>itemK(r)===k).reduce((a,r)=>a+num(r.amount),0); }
 
 /* ---------------- 상태 ---------------- */
@@ -1246,6 +1370,7 @@ function check(d){
     if(d.end && d.start && d.end<d.start){ E.push('출장 종료일이 시작일보다 빨라요'); bad.add('end'); }
     if(!d.place.trim()){ E.push('출장지·처리업무가 없어요'); bad.add('place'); }
     const it=tripItems(d);
+    d.items.forEach((r,i)=>{ if(itemK(r)===''&&(r.desc||String(r.amount).trim())){ E.push(`${i+1}행: 항목(조식·중식·석식 등)을 골라 주세요`); bad.add('i'+i+'k'); } });
     if(!it.length){ E.push('세부 내용(식대·숙박비·교통비)이 한 줄도 없어요'); bad.add('items'); }
     d.items.forEach((r,i)=>{
       const any=r.desc||String(r.amount).trim()||r.memo; if(!any) return;
@@ -1323,10 +1448,11 @@ function renderEditor(){
       <div class="f"><label>제출 일시</label><input type="date" data-k="date" value="${esc(d.date)}"></div>
     </div></div>
     <div class="sec"><h3>세부 내용 <span class="sp"></span><button class="btn sm" data-act="paste">표 붙여넣기</button><button class="btn sm" data-act="additem">＋ 줄 추가</button></h3>
-      <table class="rows"><thead><tr><th></th><th style="width:92px">항목</th><th>내역</th><th style="width:96px">금액(원)</th><th style="width:150px">인원 · 비고</th><th style="width:26px"></th></tr></thead><tbody>
+      <div class="qnote" id="qnote" hidden><b>조식·중식·석식은 영수증에 찍힌 시간으로 임의로 나눠 둔 거예요.</b><br>· 조식: 오전 10시 30분 전<br>· 중식: 10시 30분 ~ 오후 4시<br>· 석식: 오후 4시 이후<br>실제 사정에 맞게 목록에서 바꿔 주세요. 시간을 못 읽은 영수증은 비워 두니 직접 골라 주세요.</div>
+      <table class="rows"><thead><tr><th></th><th style="width:92px">항목 <button type="button" class="qtip" data-act="qtip" aria-label="조식·중식·석식 나누는 기준">?</button></th><th>내역</th><th style="width:96px">금액(원)</th><th style="width:150px">인원 · 비고</th><th style="width:26px"></th></tr></thead><tbody>
       ${d.items.map((r,i)=>`<tr><td class="n">${i+1}</td>
-        <td><select data-i="${i}" data-c="k">${TRIP_UI.map(c=>`<option ${c===itemK(r)?'selected':''}>${c}</option>`).join('')}</select>${itemK(r)==='직접 입력'?`<input type="text" class="klabel" data-i="${i}" data-c="label" value="${esc(r.label||'')}" placeholder="항목 이름">`:''}</td>
-        <td><input type="text" class="${r.auto&&r.auto.desc?'auto':''}" data-i="${i}" data-c="desc" value="${esc(r.desc)}" placeholder="${itemK(r)==='교통비'?'예: 오송역→서울역 (KTX)':itemK(r)==='숙박비'?'예: 아산 ○○모텔 1박':MEALS.includes(itemK(r))?'예: '+itemK(r)+' (김밥천국)':'예: 내역'}"></td>
+        <td><select data-i="${i}" data-c="k"><option value="" ${itemK(r)===''?'selected':''} disabled>항목 고르기</option>${TRIP_UI.map(c=>`<option ${c===itemK(r)?'selected':''}>${c}</option>`).join('')}</select>${itemK(r)==='직접 입력'?`<input type="text" class="klabel" data-i="${i}" data-c="label" value="${esc(r.label||'')}" placeholder="항목 이름">`:''}</td>
+        <td><input type="text" class="${r.auto&&r.auto.desc?'auto':''}" data-i="${i}" data-c="desc" value="${esc(r.desc)}" placeholder="${itemK(r)==='교통비'?'예: 오송역→서울역 (KTX)':itemK(r)==='유류비'?'예: 서울→세종 왕복 주유':itemK(r)==='숙박비'?'예: 아산 ○○모텔 1박':MEALS.includes(itemK(r))?'예: '+itemK(r)+' (김밥천국)':'예: 내역'}"></td>
         <td><input type="text" class="amt ${r.auto&&r.auto.amount?'auto':''}" inputmode="numeric" data-i="${i}" data-c="amount" value="${esc(r.amount?won(num(r.amount)):'')}"></td>
         <td><div class="ppl">${needsPeople(r,'trip')?`<input type="number" min="0" data-i="${i}" data-c="people" value="${esc(r.people||'')}" placeholder="인원"><span>인</span>`:''}<input type="text" data-i="${i}" data-c="memo" value="${esc(r.memo)}" placeholder="비고"></div></td>
         <td><button class="rowdel" data-delitem="${i}" title="줄 삭제">×</button></td></tr>`).join('')}
@@ -1490,7 +1616,7 @@ async function addImages(files){
   }else if(d.type==='trip'){
     d.receipts.push(...recs); sortReceipts(d);
     if(ok) recs.filter(rc=>rc.kind!=='견적서'&&rc.kind!=='증빙자료').forEach(rc=>{ const r=rc.ocr; if(!r){ miss++; return; } const g=guessDesc(r,'trip');
-      const kk=g.cat==='식대'?mealByTime(r.time):g.cat; const row={cat:g.cat,k:kk,_kAuto:MEALS.includes(kk),rcid:rc.id||(rc.id=uid()),desc:MEALS.includes(kk)?kk:'',amount:r.amount?String(r.amount):'',memo:'',people:'',auto:{...(r.amount?{amount:1}:{})}};
+      const kk=g.cat==='식대'?mealByTime(r.time):(g.cat==='교통비'&&/주유|유류|휘발유|경유|LPG|충전소|오일|GS칼텍스|SK에너지|S-OIL|에쓰오일|현대오일뱅크/i.test(r.text||''))?'유류비':g.cat; const row={cat:kk===''?'':g.cat,k:kk,_kAuto:MEALS.includes(kk),rcid:rc.id||(rc.id=uid()),desc:MEALS.includes(kk)?kk:'',amount:r.amount?String(r.amount):'',memo:'',people:'',auto:{...(r.amount?{amount:1}:{})}};
       const bi=d.items.findIndex(x=>!x.desc&&!String(x.amount).trim()&&!x.memo&&!x.people); if(bi>=0) d.items[bi]=row; else d.items.push(row);
       if(r.date&&(!d.start||r.date<d.start)) d.start=r.date; if(r.date&&d.start&&r.date>d.start&&(!d.end||r.date>d.end)) d.end=r.date;
       if(!r.amount||!r.date) miss++; });
@@ -2125,7 +2251,7 @@ function renderRoad(){
 }
 let stageAll=true;
 function rcItem(d,r){ return (d.items||[]).find(x=>x.rcid&&x.rcid===r.id); }
-function rcLabel(d,r){ if(r.kind==='증빙자료') return '증빙자료'; if(d.type==='trip'){ const it=rcItem(d,r); if(it) return itemK(it)==='직접 입력'?(it.label||'기타'):itemK(it); const o=r.ocr||{}; const g=o.text?guessCat(o.text):''; return g==='식대'?mealByTime(o.time):(g||'영수증'); } return r.kind||'영수증'; }
+function rcLabel(d,r){ if(r.kind==='증빙자료') return '증빙자료'; if(d.type==='trip'){ const it=rcItem(d,r); if(it) return itemK(it)==='직접 입력'?(it.label||'기타'):(itemK(it)||'항목 고르기'); const o=r.ocr||{}; const g=o.text?guessCat(o.text):''; if(g==='교통비'&&/주유|유류|휘발유|경유|LPG|충전소/i.test(o.text||'')) return '유류비'; return g==='식대'?(mealByTime(o.time)||'항목 고르기'):(g||'영수증'); } return r.kind||'영수증'; }
 function callsOf(d,r){ if(r.kind==='증빙자료') return '<span class="call proof">증빙자료 · 금액 입력 안 함</span>'; if(d.type==='gian'||r.kind==='견적서'||r.kind==='거래명세서') return `<span class="call">${esc(r.kind||'첨부')}</span>`;
   const o=r.ocr||{}; return [o.date?`<span class="call">날짜 ${esc(fmtMD(o.date))}${o.hm?' '+o.hm:''}</span>`:`<span class="call no">날짜 못 읽음</span>`, o.amount?`<span class="call">금액 ${won(o.amount)}</span>`:`<span class="call no">금액 못 읽음</span>`].join(''); }
 function renderStage(){
@@ -2143,7 +2269,7 @@ function renderStage(){
     st.innerHTML=`<div class="rgrid">${d.receipts.map((r,i)=>`<button class="rg ${r.kind==='증빙자료'?'pf':''}" data-big="${i}"><span class="del" data-del="${i}" title="이 영수증 빼기">×</span><span class="im">${rcSVG(r,false)}</span><span class="cap"><i class="no">${i+1}</i><span class="tg" data-tog="${i}" title="눌러서 영수증/증빙자료 바꾸기">${esc(rcLabel(d,r))}</span><span class="am">${r.kind==='증빙자료'?'입력 안 함':(r.ocr&&r.ocr.amount?won(r.ocr.amount)+'원':'')}</span></span></button>`).join('')}</div>`;
   }else{
     const r=d.receipts[selRc];
-    st.className='stage'; st.innerHTML=`${n>1?'<button class="allbtn" data-all="1">← 모두 보기</button>':''}<button class="delbig" data-del="${selRc}" type="button">× 이 영수증 빼기</button><div class="rcbox">${rcSVG(r,true)}</div><div class="zhint" id="zhint">두 손가락으로 벌리거나, 끌어서 확대해 보세요</div><div class="calls">${callsOf(d,r)}<span class="call tgc" data-tog="${selRc}" title="눌러서 바꾸기">${r.kind==='증빙자료'?'증빙자료':esc(r.kind||'영수증')} ⇄</span></div>`;
+    st.className='stage'; st.innerHTML=`${n>1?'<button class="allbtn" data-all="1">← 모두 보기</button>':''}<button class="delbig" data-del="${selRc}" type="button">× 이 영수증 빼기</button><div class="rcbox">${rcSVG(r,true)}</div><button type="button" class="magbtn" data-mag="${selRc}" aria-label="영수증 크게 보기">🔍 크게 보기</button><div class="zhint" id="zhint">마우스 휠로 확대 · 🔍 누르면 크게 보기</div><div class="calls">${callsOf(d,r)}<span class="call tgc" data-tog="${selRc}" title="눌러서 바꾸기">${r.kind==='증빙자료'?'증빙자료':esc(r.kind||'영수증')} ⇄</span></div>`;
   }
   th.innerHTML=d.receipts.map((r,i)=>`<button class="${i===selRc&&!(n>1&&stageAll)?'on':''} ${r.kind==='증빙자료'?'pf':''}" data-rc="${i}" title="${esc(rcLabel(d,r))}"><img src="${r.url}" alt="">${r.kind==='증빙자료'?'<i>증빙</i>':''}<span class="tdel" data-del="${i}" title="빼기">×</span></button>`).join('')+`<label class="addrc" title="영수증 추가">＋<input type="file" accept="image/*,application/pdf,.pdf" multiple hidden data-addrc="1"></label>`;
   if(d.type==='trip' && n){
@@ -2186,6 +2312,7 @@ document.querySelectorAll('[data-new]').forEach(b=>b.addEventListener('click',()
 
 /* 사진 칸 */
 $('#photo').addEventListener('click',e=>{
+  const mg=e.target.closest('[data-mag]'); if(mg){ e.stopPropagation(); openMag(+mg.dataset.mag); return; }
   const gd=e.target.closest('[data-guide]'); if(gd){ e.stopPropagation(); openHelp('g'); return; }
   const dl=e.target.closest('[data-del]'); if(dl){ e.stopPropagation(); e.preventDefault(); delRc(+dl.dataset.del); return; }
   const tg=e.target.closest('[data-tog]'); if(tg){ e.stopPropagation(); toggleProof(+tg.dataset.tog); return; }
@@ -2262,7 +2389,7 @@ function openConfirm(){
   $('#seenOk').checked=false; const v=$('#vDone'); v.hidden=false; v.dataset.mode='final'; doneDoc=d.id;
   $('#doneWord').textContent='다 됐어요'; $('#doneInfo').innerHTML=''; $('#saveLbl').textContent='저장하기';
   document.querySelector('[data-done="save"]').classList.remove('done');
-  renderDest(); renderChecks(); renderPreview(); requestAnimationFrame(()=>{ fitPreview(); const b=$('#pvbody'); if(b) b.scrollTop=0; });
+  renderDest(); renderChecks(); renderPreview(); requestAnimationFrame(()=>{ fitPreview(); const b=$('#pvbody'); if(b) b.scrollTop=0; }); setTimeout(fitPreview,250); setTimeout(fitPreview,700);
 }
 $('#btnConfirm').onclick=openConfirm; $('#btnPv').onclick=openConfirm;
 $('#mConfirm').addEventListener('click',e=>{ if(e.target.closest('[data-close]')||e.target.id==='mConfirm') $('#mConfirm').classList.remove('on'); });
@@ -2278,7 +2405,7 @@ async function pagePng(d){
 $('#btnDown').onclick=async()=>{
   const d=curDoc(); if(!d) return;
   if(check(d).E.length){ toast('빠진 부분을 먼저 채워 주세요'); return; }
-  if(!$('#seenOk').checked){ toast('아래 출력 모습을 확인하고 "직접 확인했어요"에 체크해 주세요'); $('#seenOk').focus(); $('#seenOk').closest('label').classList.add('need'); setTimeout(()=>$('#seenOk').closest('label').classList.remove('need'),1600); return; }
+  if(!$('#seenOk').checked){ toast('왼쪽 출력 미리보기를 확인하고 "직접 확인했어요"에 체크해 주세요'); $('#seenOk').focus(); $('#seenOk').closest('label').classList.add('need'); setTimeout(()=>$('#seenOk').closest('label').classList.remove('need'),1600); return; }
   const parts=folderParts(d), base=outName(d); let where='다운로드 폴더', ok=false;
   try{
     if(ui.fmt==='pdf'){ $('#mConfirm').classList.remove('on'); toast('인쇄 창에서 대상(프린터)을 "PDF로 저장"으로 골라 주세요'); doPrint([d]); ok=true; where='인쇄 창'; }
@@ -2314,8 +2441,12 @@ function showDone(d,where,parts){
 }
 $('#vDone').addEventListener('click',e=>{
   const b=e.target.closest('[data-done]'); if(!b) return; const a=b.dataset.done;
-  if(a==='save'){ if(b.classList.contains('done')){ setView('docs'); $('#vDone').hidden=true; return; } $('#btnDown').click(); return; }
-  if(a==='print'){ const d=docs.find(x=>x.id===doneDoc); if(d) doPrint([d]); return; }
+  const dd=docs.find(x=>x.id===doneDoc);
+  if(a==='save'&&b.classList.contains('done')){ setView('docs'); $('#vDone').hidden=true; return; }
+  if(a==='save'||a==='print'||a==='both'){ askSeen(async()=>{ $('#seenOk').checked=true;
+      if(a==='print'){ if(dd) doPrint([dd]); return; }
+      if(a==='both'){ if(dd) doPrint([dd]); }
+      $('#btnDown').click(); }); return; }
   $('#vDone').hidden=true;
   if(a==='phone') $('#driveIn').click();
   else if(a==='print'){ const d=docs.find(x=>x.id===doneDoc); if(d) doPrint([d]); }
@@ -2475,6 +2606,7 @@ function normTxt(t){ let x=String(t||'').normalize('NFKC');
   x=x.replace(/\b\d{4}\s*-\s*\d{4}\s*-?\s*[*xX]{2,}[\s\S]{0,8}?(?=\s|$)/g,' ').replace(/\d{3,4}\s*-\s*\d{3,4}\s*-\s*[*xX]{2,}\S*/g,' ').replace(/\d+\s*-\s*[*xX]{2,}/g,' ').replace(/\b\d{4}\s*-\s*\d{4}\b(\s*-?\s*[\d*xX]{2,})*/g,' ').replace(/[*xX]{2,}\s*-\s*\d+/g,' ');
   return x; }
 parseReceipt=function(text){ const t=normTxt(text); const o=_parse(t);
+  if(!o.hm){ const g=t.match(/20\d{2}\s*[.,\-\/]\s*\d{1,2}\s*[.,\-\/]\s*\d{2}\s*([01]\d|2[0-3])\s*:\s*([0-5]\d)/); if(g){ o.hm=g[1]+':'+g[2]; o.time=+g[1]+(+g[2])/60; } }
   const KEY=/(결\s*제|주\s*문|승\s*인|청\s*구|이\s*용|판\s*매)\s*금\s*액|합\s*계|^\s*합\s+\d|총\s*액|카\s*드/, BAD=/할\s*인|포인트|POINT|적립|번\s*호|쿠폰|면세|과세|부가|봉사/i;
   const cnt={}; t.split(/\n/).forEach(l=>{ if(!KEY.test(l)||BAD.test(l)) return; (l.match(/\d{1,3}(?:,\d{3})+|\d{4,7}/g)||[]).map(v=>+v.replace(/,/g,'')).filter(n=>n>=100&&n<=20000000).forEach(n=>cnt[n]=(cnt[n]||0)+1); });
   const best=Object.entries(cnt).sort((a,b)=>b[1]-a[1]||b[0]-a[0])[0]; if(best) o.amount=+best[0];
@@ -2513,8 +2645,11 @@ function digitRe(n){ const s=String(n); let p=''; for(let i=0;i<s.length;i++){ p
 function findMarks(o,segs){ const M=[]; const T=g=>normTxt(g.text);
   const pick=(re,label)=>{ const g=segs.find(x=>re.test(T(x))); if(g) M.push({f:label,poly:g.poly}); return !!g; };
   if(o.amount){ if(!pick(digitRe(o.amount),'금액')&&o.vat){ pick(digitRe(o.vat[0]),'공급가'); pick(digitRe(o.vat[1]),'부가세'); } }
-  if(o.date){ const [y,m,d]=o.date.split('-'); const re=new RegExp('(20)?'+y.slice(2)+'\\D{0,4}0?'+(+m)+'\\D{0,4}0?'+(+d)+'(?![0-9])'); pick(re,'날짜'); }
-  if(o.hm){ const [h,mi]=o.hm.split(':'); const re=new RegExp('(^|[^0-9])0?'+(+h)+'\\s*[:;]\\s*'+mi); if(!M.some(x=>x.f==='날짜'&&re.test(T(segs.find(g=>g.poly===x.poly)||{text:''})))) pick(re,'시간'); }
+  if(o.date){ const [y,m,d]=o.date.split('-'); const S='[\\s.,\\-\\/년월]{1,3}';
+    const res=[new RegExp('(20)?'+y.slice(2)+S+'0?'+(+m)+S+'0?'+(+d)+'(?![0-9])'), new RegExp('(^|[^0-9])0?'+(+m)+'\\s*[.\\-\\/월]\\s*0?'+(+d)+'(일|[^0-9]|$)'), new RegExp(y+'0?'+(+m)+'0?'+(+d)), new RegExp(y+'[^0-9]{0,3}'+String(+m).padStart(2,'0')+'[^0-9]{0,3}'+String(+d).padStart(2,'0'))];
+    let hit=false; for(const re of res){ if(pick(re,'날짜')){ hit=true; break; } }
+    if(!hit){ for(let k=0;k<segs.length-1&&!hit;k++){ for(let q=k+1;q<Math.min(segs.length,k+4)&&!hit;q++){ const tt=T(segs[k])+' '+T(segs[q]); if(res.some(re=>re.test(tt))){ M.push({f:'날짜',poly:segs[k].poly}); M.push({f:'',poly:segs[q].poly}); hit=true; } } } } }
+  if(o.hm){ const [h,mi]=o.hm.split(':'); const re=new RegExp('(^|[^0-9])0?'+(+h)+'\\s*[:;]\\s*'+mi); const dm=M.find(x=>x.f==='날짜'); const ds=dm&&segs.find(g=>g.poly===dm.poly); if(ds&&re.test(T(ds))) dm.f='날짜·시간'; else pick(re,'시간'); }
   return M; }
 function isScene(o,text){ const t=(text||'').replace(/\s/g,''); const rcpt=/합계|금액|결제|승인|카드|영수증|매출|부가세|총액|현금|주차|입차|원$|\d원|receipt|total|\d{1,3},\d{3}/i.test(t); const chars=(t.match(/[가-힣0-9A-Za-z]/g)||[]).length; return !rcpt&&!(o.amount&&o.date)&&chars<120; }
 getOCR=()=>{ if(!window.PPOCR) return Promise.reject(new Error('읽기 엔진 없음')); return PPOCR.init(); };
@@ -2569,7 +2704,7 @@ $('#editor').addEventListener('input',()=>{ renderTot(); const d=curDoc(); if(!d
 /* 영수증 ↔ 증빙자료 */
 function toggleProof(i){ const d=curDoc(); if(!d) return; const r=d.receipts[i]; if(!r) return;
   if(r.kind==='증빙자료'){ r.kind='영수증';
-    if(d.type==='trip'&&r.ocr&&!rcItem(d,r)){ const o=r.ocr, g=guessDesc(o,'trip'); const row={cat:g.cat,k:g.cat==='식대'?mealByTime(o.time):g.cat,rcid:r.id,desc:'',amount:o.amount?String(o.amount):'',memo:'',people:'',auto:o.amount?{amount:1}:{}}; const bi=d.items.findIndex(x=>!x.desc&&!String(x.amount).trim()&&!x.memo&&!x.people); if(bi>=0) d.items[bi]=row; else d.items.push(row); }
+    if(d.type==='trip'&&r.ocr&&!rcItem(d,r)){ const o=r.ocr, g=guessDesc(o,'trip'); const kq=g.cat==='식대'?mealByTime(o.time):g.cat; const row={cat:kq===''?'':g.cat,k:kq,rcid:r.id,desc:'',amount:o.amount?String(o.amount):'',memo:'',people:'',auto:o.amount?{amount:1}:{}}; const bi=d.items.findIndex(x=>!x.desc&&!String(x.amount).trim()&&!x.memo&&!x.people); if(bi>=0) d.items[bi]=row; else d.items.push(row); }
     toast('영수증으로 바꿨어요'); }
   else { r.kind='증빙자료'; if(d.type==='trip'){ d.items=d.items.filter(x=>x.rcid!==r.id); if(!d.items.length) d.items.push({cat:'식대',k:'중식',desc:'',amount:'',memo:''}); toast('증빙자료로 바꿨어요. 금액 줄에서 뺐어요'); } else toast('증빙자료로 바꿨어요. 이 사진의 금액은 입력하지 않아요'); }
   d._touched=true; refresh(); }
@@ -2589,7 +2724,7 @@ function korWon(n){ n=Math.floor(Math.abs(+n||0)); if(!n) return '영'; const D=
   while(n>0){ const part=n%10000; if(part){ let s=''; const ds=String(part).padStart(4,'0'); for(let i=0;i<4;i++){ const v=+ds[i]; if(v) s+=(v===1&&i<3?'':D[v])+U[3-i]; } out=s+B[g]+out; } n=Math.floor(n/10000); g++; } return out; }
 const _openConfirm=openConfirm;
 openConfirm=function(){ const d=curDoc(); if(!d) return; const t=totalOf(d);
-  $('#cfTot').innerHTML=`<span class="lb">${SHORT[d.type]} 합계</span><b>${won(t)}<i>원</i></b><small>일금 ${korWon(t)}원정</small>`;
+  $('#cfTot').innerHTML=`<span class="lb">${SHORT[d.type]} 합계</span><b>${won(t)}<i>원</i></b>`;
   _openConfirm(); };
 $('#btnConfirm').onclick=()=>openConfirm(); $('#btnPv').onclick=()=>openConfirm();
 const _showDone=showDone;
@@ -2602,7 +2737,7 @@ function rcSVG(r,big){ const o=r.ocr||{}; const W=o.W||r.w||1000, H=o.H||r.h||14
   const ms=marks.map(m=>{ const pts=m.poly.map(p=>p.join(',')).join(' '); const x=Math.min(...m.poly.map(p=>p[0])), y=Math.min(...m.poly.map(p=>p[1]));
     return `<g class="mk" data-f="${m.f}"><polygon points="${pts}" class="hl"/>${big?`<text x="${x}" y="${Math.max(fs,y-fs*0.35)}" font-size="${fs}" class="hlt">${m.f}</text>`:''}</g>`; }).join('');
   return `<svg class="rcsvg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="영수증"><image href="${r.url}" width="${W}" height="${H}"/>${ms}</svg>`; }
-const FMAP={date:['날짜','시간'],amount:['금액','공급가','부가세']};
+const FMAP={date:['날짜','시간','날짜·시간'],amount:['금액','공급가','부가세']};
 document.getElementById('editor').addEventListener('focusin',e=>{ const t=e.target; const d=curDoc(); if(!d) return; let row=null;
   if(t.dataset.r!=null) row=d.rows[+t.dataset.r]; else if(t.dataset.i!=null) row=d.items[+t.dataset.i]; if(!row||!row.rcid) return;
   const i=d.receipts.findIndex(r=>r.id===row.rcid); if(i<0) return; if(selRc!==i||stageAll){ selRc=i; stageAll=false; renderStage(); }
@@ -2701,13 +2836,17 @@ if(inApp&&!standalone()){ const android=/Android/i.test(navigator.userAgent);
 const _mSend2=$('#mSend').onclick;
 $('#mSend').onclick=()=>{ _mSend2(); const d=curDoc(); const E=check(d||{}).E||[]; const sh=$('#mShare'); const has=d&&d.receipts.length;
   if(E.length){ sh.disabled=!has; sh.innerHTML=`영수증 사진만 텔레그램으로 보내기<small>${has?`빠진 부분이 있어서 한글 파일 대신 사진 ${d.receipts.length}장을 보내요`:'올린 영수증 사진이 없어요'}</small>`; sh.dataset.mode='photo'; }
-  else { sh.disabled=false; sh.innerHTML='텔레그램으로 보내기<small>서류와 영수증을 PDF 한 파일로 보내요. 공유 창에서 텔레그램을 골라요</small>'; sh.dataset.mode='hwpx'; } };
+  else { sh.disabled=false; sh.innerHTML='텔레그램으로 보내기<small>PDF 만드는 중… 잠시만요</small>'; sh.dataset.mode='hwpx'; prepPdf(); } };
 const _mShare=$('#mShare').onclick;
 $('#mShare').onclick=async()=>{ const d=curDoc(); if(!d) return;
-  if($('#mShare').dataset.mode!=='photo'){ toast('PDF 만드는 중…'); try{ const pdf=jpegsToPdf(await pagesJpeg(d)); const file=new File([pdf],fileName(d)+'.pdf',{type:'application/pdf'});
-      if(navigator.canShare&&navigator.canShare({files:[file]})){ await navigator.share({files:[file],title:fileName(d)}); $('#mSendSheet').classList.remove('on'); }
-      else { saveBlob(pdf,file.name); errToast(inApp?'이 화면에서는 바로 보낼 수 없어요. 영수증패스 아이콘이나 크롬으로 열어 주세요':'이 폰에서는 바로 보낼 수 없어서 PDF로 저장했어요'); }
-    }catch(err){ if(err&&err.name==='AbortError') return; console.error(err); errToast('보내지 못했어요. 잠시 뒤 다시 눌러 주세요'); } return; }
+  if($('#mShare').dataset.mode!=='photo'){
+    if(!pdfJob||pdfJob.id!==d.id||pdfJob.err) prepPdf();
+    if(!pdfJob.ready){ toast('PDF 만드는 중이에요. 준비되면 한 번 더 눌러 주세요'); return; }
+    const file=pdfJob.file;
+    try{ if(navigator.canShare&&navigator.canShare({files:[file]})){ await navigator.share({files:[file],title:fileName(d)}); $('#mSendSheet').classList.remove('on'); }
+      else { saveBlob(file,file.name); errToast(inApp?'이 화면에서는 바로 보낼 수 없어요. 영수증패스 아이콘이나 크롬으로 열어 주세요':'이 폰에서는 바로 보낼 수 없어서 PDF로 저장했어요'); } }
+    catch(err){ if(err&&err.name==='AbortError') return; console.error(err); saveBlob(file,file.name); errToast('공유 창을 열지 못해서 PDF를 저장했어요. 텔레그램에서 파일로 보내 주세요'); }
+    return; }
   try{ const files=d.receipts.map((r,i)=>new File([r.blob],`영수증_${i+1}.jpg`,{type:r.blob.type||'image/jpeg'}));
     if(navigator.canShare&&navigator.canShare({files})){ await navigator.share({files,title:'영수증 사진'}); $('#mSendSheet').classList.remove('on'); }
     else toast(inApp?'이 화면에서는 보내기가 막혀 있어요. 크롬에서 열어 주세요':'이 폰에서는 사진 보내기가 안 돼요');
@@ -2715,11 +2854,11 @@ $('#mShare').onclick=async()=>{ const d=curDoc(); if(!d) return;
 
 
 /* ---------------- 도움말 ---------------- */
-const HELP_G=[["① 바로가기 만들기 (처음 한 번)", ["<b>PC</b>: 크롬이나 엣지로 열고 → 오른쪽 위 <b>바탕화면에 바로가기 만들기</b>", "<b>폰</b>: 링크를 <b>크롬</b>으로 열고 → <b>홈 화면에 바로가기 추가</b>", "다음부터는 <b>영수증패스</b> 아이콘으로 열기"]], ["② 서류 만들기", ["<b>＋</b> 누르고 서류 종류 고르기", "영수증 <b>사진 찍기</b> (여러 장 OK)", "날짜·금액이 <b>노란 형광펜</b>과 맞는지 확인", "<b>제목</b> 쓰고 → <b>저장</b>"]], ["③ 폰 ↔ PC 연동", ["폰에서 찍고 → <b>작성 완료 → PC로 보내기</b>", "PC에서 <b>폰에서 찍은 영수증</b> 누르면 이어서 쓰기", "처음 한 번만 <b>구글 로그인</b>"]], ["④ 사진 잘 찍기", ["영수증 <b>펴서, 밝은 곳에서, 한 장씩</b>", "\"못 읽었어요\"가 뜨면 → 다시 찍거나 직접 입력"]], ["⑤ 꼭 기억!", ["자동으로 읽은 숫자는 <b>틀릴 수 있어요. 저장 전에 꼭 확인!</b>", "사진과 서류는 <b>내 폰·PC와 내 구글 드라이브에만</b> 저장돼요."]]], HELP_F=[["🔒 안심하고 쓰기", [["내 영수증이 다른 사람에게 보이나요?", "아니요. <b>내 폰·PC와 내 구글 드라이브에만</b> 저장돼요. 만든 사람도 볼 수 없어요."], ["구글 로그인하면 내 드라이브를 다 보나요?", "아니요. 영수증 하이패스가 만든 파일만 다룰 수 있어요."], ["카드번호가 찍힌 영수증도 괜찮나요?", "괜찮아요. 사진은 밖으로 나가지 않고, 카드번호는 금액으로 읽지 않아요."]]], ["📲 처음 시작하기", [["꼭 설치해야 하나요?", "아니요. 링크만 열어도 쓸 수 있어요. 바로가기를 만들면 다음에 열기 편해요."], ["비용이 드나요?", "아니요. 무료예요."], ["폰 데이터를 많이 쓰나요?", "처음 한 번 약 30MB를 받아요. <b>와이파이에서 처음 열기</b>를 권해요."], ["인터넷이 안 돼도 쓸 수 있나요?", "한 번 열어 둔 뒤에는 작성과 저장이 돼요. PC로 보내기는 인터넷이 필요해요."], ["기안자 이름이나 계좌를 바꾸고 싶어요.", "오른쪽 위 <b>기안자 → 변경</b>을 눌러요."]]], ["📷 영수증 올리기", [["\"못 읽었어요\"가 떠요.", "영수증을 펴서 밝은 곳에서 다시 찍거나 직접 입력해 주세요."], ["영수증을 잘못 올렸어요.", "사진 오른쪽 위 <b>×</b>를 누르면 빠져요. 실수로 뺐으면 <b>되돌리기</b>를 누르세요."], ["증빙 사진도 올려야 해요.", "그냥 올리면 돼요. <b>증빙자료</b>로 붙고, 금액에는 들어가지 않아요."], ["영수증 두 장을 한 번에 찍었어요.", "자동으로 나눠 읽어요. 겹쳐 있으면 못 나누니 한 장씩 찍어 주세요."]]], ["📝 서류 만들기·저장·출력", [["날짜나 금액이 틀리게 들어갔어요.", "그 칸을 눌러 직접 고칠 수 있어요. 영수증 사진의 노란 형광펜과 비교해 보세요."], ["출장보고서 식대는 어떻게 나눠요?", "영수증 시간을 보고 <b>조식·중식·석식</b>을 자동으로 골라요. 틀리면 목록에서 바꾸세요."], ["비용청구서 한 장에 몇 건까지 들어가요?", "<b>9건</b>까지예요. 넘으면 <b>나눠서 새 문서로</b>를 눌러요."], ["계좌를 서류마다 다르게 할 수 있나요?", "네. 서류의 <b>지급계좌</b> 칸에서 골라요. 등록 안 한 계좌는 <b>직접 입력</b>을 눌러요."], ["출력하면 영수증과 증빙 사진도 같이 나와요?", "네. 서류 다음 쪽에 영수증과 증빙 사진이 붙어서 함께 출력돼요. 따로 인쇄할 필요 없어요."], ["서류를 여러 개 동시에 써도 되나요?", "네. 위쪽 <b>＋</b>로 탭을 여러 개 열 수 있어요. 색으로 종류가 구분돼요."], ["저장한 서류는 어디 있나요?", "<b>내 문서</b>에서 월별·종류별로 찾을 수 있어요. 제목이나 금액으로 검색도 돼요."], ["저장한 서류를 고치고 싶어요.", "<b>내 문서</b>에서 서류 옆 연필 모양을 누르면 다시 열려요."]]], ["🔄 폰 ↔ PC 연동", [["폰에서 찍은 게 PC에 안 떠요.", "폰과 PC가 <b>같은 구글 계정</b>으로 로그인했는지 확인해 주세요."], ["텔레그램으로 보내기가 안 눌려요.", "카톡이나 텔레그램 안에서 열었을 수 있어요. <b>영수증패스 아이콘</b>이나 <b>크롬</b>으로 열어 주세요."]]], ["🛠 문제가 생겼을 때", [["화면이 예전 그대로예요.", "<b>새 버전이 있어요</b> 알림을 누르거나, 바로가기를 껐다 다시 열어 주세요."], ["쓰던 서류가 사라졌어요.", "저장 전 서류는 그 폰이나 PC에만 남아요. 다른 기기로 옮기려면 <b>PC로 보내기</b>를 써 주세요."], ["그래도 안 되면?", "조혜진 국장에게 물어보세요. 답변 비용은 커피 한 잔~ 영수증은 안 끊어 드려요! 😋☕"]]]];
+const HELP_G=[["① 바로가기 만들기 (처음 한 번)", ["<b>PC</b>: 크롬이나 엣지로 열고 → 오른쪽 위 <b>바탕화면에 바로가기 만들기</b>", "<b>폰</b>: 링크를 <b>크롬</b>으로 열고 → <b>홈 화면에 바로가기 추가</b>", "다음부터는 <b>영수증패스</b> 아이콘으로 열기"]], ["② 서류 만들기", ["<b>＋</b> 누르고 서류 종류 고르기", "영수증 <b>사진 찍기</b> (여러 장 OK)", "날짜·금액이 <b>노란 형광펜</b>과 맞는지 확인", "<b>제목</b> 쓰고 → <b>저장</b>"]], ["③ 폰 ↔ PC 연동", ["폰에서 찍고 → <b>작성 완료 → PC로 보내기</b>", "PC에서 <b>폰에서 찍은 영수증</b> 누르면 이어서 쓰기", "처음 한 번만 <b>구글 로그인</b>"]], ["④ 사진 잘 찍기", ["영수증 <b>펴서, 밝은 곳에서, 한 장씩</b>", "\"못 읽었어요\"가 뜨면 → 다시 찍거나 직접 입력"]], ["⑤ 꼭 기억!", ["자동으로 읽은 숫자는 <b>틀릴 수 있어요. 저장 전에 꼭 확인!</b>", "사진과 서류는 <b>내 폰·PC와 내 구글 드라이브에만</b> 저장돼요."]]], HELP_F=[["🔒 안심하고 쓰기", [["내 영수증이 다른 사람에게 보이나요?", "아니요. <b>내 폰·PC와 내 구글 드라이브에만</b> 저장돼요. 만든 사람도 볼 수 없어요."], ["구글 로그인하면 내 드라이브를 다 보나요?", "아니요. 영수증 하이패스가 만든 파일만 다룰 수 있어요."], ["카드번호가 찍힌 영수증도 괜찮나요?", "괜찮아요. 사진은 밖으로 나가지 않고, 카드번호는 금액으로 읽지 않아요."]]], ["📲 처음 시작하기", [["꼭 설치해야 하나요?", "아니요. 링크만 열어도 쓸 수 있어요. 바로가기를 만들면 다음에 열기 편해요."], ["비용이 드나요?", "아니요. 무료예요."], ["폰 데이터를 많이 쓰나요?", "처음 한 번 약 30MB를 받아요. <b>와이파이에서 처음 열기</b>를 권해요."], ["인터넷이 안 돼도 쓸 수 있나요?", "한 번 열어 둔 뒤에는 작성과 저장이 돼요. PC로 보내기는 인터넷이 필요해요."], ["기안자 이름이나 계좌를 바꾸고 싶어요.", "오른쪽 위 <b>기안자 → 변경</b>을 눌러요."]]], ["📷 영수증 올리기", [["\"못 읽었어요\"가 떠요.", "영수증을 펴서 밝은 곳에서 다시 찍거나 직접 입력해 주세요."], ["영수증을 잘못 올렸어요.", "사진 오른쪽 위 <b>×</b>를 누르면 빠져요. 실수로 뺐으면 <b>되돌리기</b>를 누르세요."], ["증빙 사진도 올려야 해요.", "그냥 올리면 돼요. <b>증빙자료</b>로 붙고, 금액에는 들어가지 않아요."], ["영수증 두 장을 한 번에 찍었어요.", "자동으로 나눠 읽어요. 겹쳐 있으면 못 나누니 한 장씩 찍어 주세요."]]], ["📝 서류 만들기·저장·출력", [["날짜나 금액이 틀리게 들어갔어요.", "그 칸을 눌러 직접 고칠 수 있어요. 영수증 사진의 노란 형광펜과 비교해 보세요."], ["출장보고서 식대는 어떻게 나눠요?", "영수증 시간을 보고 <b>조식·중식·석식</b>을 임의로 골라 둬요. 사정에 맞게 목록에서 바꿔 주세요. 시간을 못 읽으면 비워 둬요."], ["비용청구서 한 장에 몇 건까지 들어가요?", "<b>9건</b>까지예요. 넘으면 <b>나눠서 새 문서로</b>를 눌러요."], ["계좌를 서류마다 다르게 할 수 있나요?", "네. 서류의 <b>지급계좌</b> 칸에서 골라요. 등록 안 한 계좌는 <b>직접 입력</b>을 눌러요."], ["출력하면 영수증과 증빙 사진도 같이 나와요?", "네. 서류 다음 쪽에 영수증과 증빙 사진이 붙어서 함께 출력돼요. 따로 인쇄할 필요 없어요."], ["서류를 여러 개 동시에 써도 되나요?", "네. 위쪽 <b>＋</b>로 탭을 여러 개 열 수 있어요. 색으로 종류가 구분돼요."], ["저장한 서류는 어디 있나요?", "<b>내 문서</b>에서 월별·종류별로 찾을 수 있어요. 제목이나 금액으로 검색도 돼요."], ["저장한 서류를 고치고 싶어요.", "<b>내 문서</b>에서 서류 옆 연필 모양을 누르면 다시 열려요."]]], ["🔄 폰 ↔ PC 연동", [["폰에서 찍은 게 PC에 안 떠요.", "폰과 PC가 <b>같은 구글 계정</b>으로 로그인했는지 확인해 주세요."], ["텔레그램으로 보내기가 안 눌려요.", "카톡이나 텔레그램 안에서 열었을 수 있어요. <b>영수증패스 아이콘</b>이나 <b>크롬</b>으로 열어 주세요."]]], ["🛠 문제가 생겼을 때", [["화면이 예전 그대로예요.", "<b>새 버전이 있어요</b> 알림을 누르거나, 바로가기를 껐다 다시 열어 주세요."], ["쓰던 서류가 사라졌어요.", "저장 전 서류는 그 폰이나 PC에만 남아요. 다른 기기로 옮기려면 <b>PC로 보내기</b>를 써 주세요."], ["그래도 안 되면?", "조혜진 국장에게 물어보세요. 답변 비용은 커피 한 잔~ 영수증은 안 끊어 드려요! 😋☕"]]]];
 if(window.RP_dbg) RP_dbg.HELP={G:HELP_G,F:HELP_F};
 
 /* 사용법: 실제 화면 그림으로 */
-const HELP_S=[{"t": "① 바로가기 만들기", "steps": [{"h": "바로가기 만들기", "pc": "크롬이나 엣지로 영수증 하이패스를 열면 오른쪽 위에 <b>바탕화면에 바로가기 만들기</b> 버튼이 보여요. 누른 뒤 <b>설치</b>를 누르면 바탕화면에 아이콘이 생겨요.", "m": "링크를 <b>크롬</b>으로 열면 화면 맨 위에 <b>홈 화면에 바로가기 추가</b> 안내가 떠요. 노란 <b>추가</b>를 누르세요.", "img": "1a", "im": {"m": "m_1a", "pc": "pc_1a"}}, {"h": "다음부터는 아이콘으로 열기", "d": "바탕화면이나 홈 화면의 <b>영수증패스</b> 아이콘을 누르면 바로 열려요. 카톡·텔레그램 안에서 링크로 열면 보내기가 안 될 수 있어요.", "im": {"m": null, "pc": null}}]}, {"t": "② 서류 만들기", "steps": [{"h": "노란 ＋ 누르기", "d": "작성 칸 위쪽 검은 줄 맨 오른쪽에 있는 노란 테두리 <b>＋</b>를 누르세요.", "img": "2a", "im": {"m": "m_2a", "pc": "pc_2a"}}, {"h": "만들 서류 고르기", "d": "<b>비용청구서 · 출장보고서 · 기안서</b> 중 하나를 누르면 새 서류가 열려요. 서류마다 색이 달라서 여러 개를 열어도 헷갈리지 않아요.", "img": "2b", "im": {"m": "m_2b", "pc": "pc_2b"}}, {"h": "영수증 올리기", "pc": "회색 칸의 노란 <b>카메라</b>를 눌러 사진을 고르거나, 사진 파일을 회색 칸에 끌어다 놓으세요. 여러 장을 한꺼번에 올려도 돼요.", "m": "화면 맨 아래 왼쪽 <b>영수증 찍기</b>를 누르고 영수증을 찍으세요. 계속 찍으면 같은 서류에 한 장씩 쌓여요.", "img": "2c", "im": {"m": "m_2c", "pc": "pc_2c"}}, {"h": "노란 형광펜과 비교하기", "d": "날짜와 금액이 자동으로 들어가요. 사진 속 <b>노란 형광펜</b> 부분과 오른쪽 날짜·금액이 같은지 보세요. 다르면 그 칸을 눌러 고치면 돼요.", "img": "2d", "imgm": "pc_2d", "im": {"m": "pc_2d", "pc": "pc_2d"}}, {"h": "제목 쓰기", "d": "<b>제목</b> 칸에 예: \"12/17 야근 식대\"처럼 쓰세요. 아래 적요에도 똑같이 들어가요.", "img": "2e", "im": {"m": "m_2e", "pc": "pc_2e"}}, {"h": "작성 완료 누르기", "pc": "작성 칸 아래 노란 <b>작성 완료</b>를 누르세요. 위쪽 1·2·3 중 <b>3</b>을 눌러도 돼요.", "m": "화면 맨 아래 오른쪽 노란 <b>작성 완료</b>를 누르세요.", "img": "2f", "im": {"m": "m_2f", "pc": null}}, {"h": "확인하고 저장·인쇄", "pc": "<b>다 됐어요</b> 화면 오른쪽 아래 출력 모습을 보고 <b>직접 확인했어요</b>에 체크한 뒤, 노란 <b>저장하기</b>를 누르세요. 저장 없이 <b>바로 인쇄</b>만 해도 돼요.", "m": "<b>PC로 보내기</b>나 <b>텔레그램으로 보내기</b>(PDF로 보내져요) 중 하나를 누르세요.", "img": "2g", "imgm": "m_3a", "im": {"m": "m_3a", "pc": null}}]}, {"t": "③ 폰 ↔ PC 연동", "steps": [{"h": "폰에서 보내기", "d": "폰에서 <b>작성 완료 → PC로 보내기</b>를 누르세요. 처음 한 번만 구글 로그인을 해요.", "img": "3a", "imgpc": "m_3a", "im": {"m": "m_3a", "pc": "m_3a"}}, {"h": "PC에서 받기", "d": "PC 오른쪽 위 흰 버튼 <b>폰에서 찍은 영수증</b>을 누르면 폰에서 보낸 서류가 떠요. 폰과 PC가 <b>같은 구글 계정</b>이어야 해요.", "img": "3b", "imgm": "pc_3b", "im": {"m": "pc_3b", "pc": "pc_3b"}}]}, {"t": "④ 사진 잘 찍기", "steps": [{"h": "펴서, 밝은 곳에서, 한 장씩", "d": "구겨진 영수증은 펴고, 그림자 없이 밝은 곳에서, 화면에 영수증이 꽉 차게 찍으세요.", "im": {"m": null, "pc": null}}, {"h": "\"못 읽었어요\"가 뜨면", "d": "다시 찍거나, 날짜·금액 칸을 눌러 직접 입력하세요. 서류는 똑같이 만들어져요.", "im": {"m": null, "pc": null}}]}, {"t": "⑤ 꼭 기억!", "steps": [{"h": "저장 전에 꼭 확인", "d": "자동으로 읽은 숫자는 <b>틀릴 수 있어요.</b> 저장 전에 노란 형광펜과 꼭 비교하세요.", "im": {"m": null, "pc": null}}, {"h": "내 것은 나만 봐요", "d": "사진과 서류는 <b>내 폰·PC와 내 구글 드라이브에만</b> 저장돼요.", "im": {"m": null, "pc": null}}]}]; let helpSec=0;
+const HELP_S=[{"t": "① 바로가기 만들기", "steps": [{"h": "바로가기 만들기", "pc": "크롬이나 엣지로 영수증 하이패스를 열면 오른쪽 위에 <b>바탕화면에 바로가기 만들기</b> 버튼이 보여요. 누른 뒤 <b>설치</b>를 누르면 바탕화면에 아이콘이 생겨요.", "m": "링크를 <b>크롬</b>으로 열면 화면 맨 위에 <b>홈 화면에 바로가기 추가</b> 안내가 떠요. 노란 <b>추가</b>를 누르세요.", "img": "1a", "im": {"m": "m_1a", "pc": "pc_1a"}}, {"h": "다음부터는 아이콘으로 열기", "d": "바탕화면이나 홈 화면의 <b>영수증패스</b> 아이콘을 누르면 바로 열려요. 카톡·텔레그램 안에서 링크로 열면 보내기가 안 될 수 있어요.", "im": {"m": null, "pc": null}}]}, {"t": "② 서류 만들기", "steps": [{"h": "노란 ＋ 누르기", "d": "작성 칸 위쪽 검은 줄 맨 오른쪽에 있는 노란 테두리 <b>＋</b>를 누르세요.", "img": "2a", "im": {"m": "m_2a", "pc": "pc_2a"}}, {"h": "만들 서류 고르기", "d": "<b>비용청구서 · 출장보고서 · 기안서</b> 중 하나를 누르면 새 서류가 열려요. 서류마다 색이 달라서 여러 개를 열어도 헷갈리지 않아요.", "img": "2b", "im": {"m": "m_2b", "pc": "pc_2b"}}, {"h": "영수증 올리기", "pc": "회색 칸의 노란 <b>카메라</b>를 눌러 사진을 고르거나, 사진 파일을 회색 칸에 끌어다 놓으세요. 여러 장을 한꺼번에 올려도 돼요.", "m": "화면 맨 아래 왼쪽 <b>영수증 찍기</b>를 누르고 영수증을 찍으세요. 계속 찍으면 같은 서류에 한 장씩 쌓여요.", "img": "2c", "im": {"m": "m_2c", "pc": "pc_2c"}}, {"h": "노란 형광펜과 비교하기", "d": "날짜와 금액이 자동으로 들어가요. 사진 속 <b>노란 형광펜</b> 부분과 오른쪽 날짜·금액이 같은지 보세요. 다르면 그 칸을 눌러 고치면 돼요.", "img": "2d", "imgm": "pc_2d", "im": {"m": "pc_2d", "pc": "pc_2d"}}, {"h": "제목 쓰기", "d": "<b>제목</b> 칸에 예: \"12/17 야근 식대\"처럼 쓰세요. 아래 적요에도 똑같이 들어가요.", "img": "2e", "im": {"m": "m_2e", "pc": "pc_2e"}}, {"h": "작성 완료 누르기", "pc": "작성 칸 아래 노란 <b>작성 완료</b>를 누르세요. 위쪽 1·2·3 중 <b>3</b>을 눌러도 돼요.", "m": "화면 맨 아래 오른쪽 노란 <b>작성 완료</b>를 누르세요.", "img": "2f", "im": {"m": "m_2f", "pc": null}}, {"h": "확인하고 저장·인쇄", "pc": "<b>다 됐어요</b> 화면 가운데 출력 미리보기를 확인하고 노란 <b>바로 인쇄</b>나 <b>인쇄하고 저장하기</b>, <b>저장하기</b> 중 하나를 누르세요. 확인했는지 한 번 더 물어봐요.", "m": "<b>PC로 보내기</b>나 <b>텔레그램으로 보내기</b>(PDF로 보내져요) 중 하나를 누르세요.", "img": "2g", "imgm": "m_3a", "im": {"m": "m_3a", "pc": null}}]}, {"t": "③ 폰 ↔ PC 연동", "steps": [{"h": "폰에서 보내기", "d": "폰에서 <b>작성 완료 → PC로 보내기</b>를 누르세요. 처음 한 번만 구글 로그인을 해요.", "img": "3a", "imgpc": "m_3a", "im": {"m": "m_3a", "pc": "m_3a"}}, {"h": "PC에서 받기", "d": "PC 오른쪽 위 흰 버튼 <b>폰에서 찍은 영수증</b>을 누르면 폰에서 보낸 서류가 떠요. 폰과 PC가 <b>같은 구글 계정</b>이어야 해요.", "img": "3b", "imgm": "pc_3b", "im": {"m": "pc_3b", "pc": "pc_3b"}}]}, {"t": "④ 사진 잘 찍기", "steps": [{"h": "펴서, 밝은 곳에서, 한 장씩", "d": "구겨진 영수증은 펴고, 그림자 없이 밝은 곳에서, 화면에 영수증이 꽉 차게 찍으세요.", "im": {"m": null, "pc": null}}, {"h": "\"못 읽었어요\"가 뜨면", "d": "다시 찍거나, 날짜·금액 칸을 눌러 직접 입력하세요. 서류는 똑같이 만들어져요.", "im": {"m": null, "pc": null}}]}, {"t": "⑤ 꼭 기억!", "steps": [{"h": "저장 전에 꼭 확인", "d": "자동으로 읽은 숫자는 <b>틀릴 수 있어요.</b> 저장 전에 노란 형광펜과 꼭 비교하세요.", "im": {"m": null, "pc": null}}, {"h": "내 것은 나만 봐요", "d": "사진과 서류는 <b>내 폰·PC와 내 구글 드라이브에만</b> 저장돼요.", "im": {"m": null, "pc": null}}]}]; let helpSec=0;
 function guideHTML(){ const dev=isPhone()?'m':'pc'; const sec=HELP_S[helpSec];
   return `<div class="chips">${HELP_S.map((s,k)=>`<button type="button" class="${k===helpSec?'on':''}" data-sec="${k}">${s.t}</button>`).join('')}</div>`
    +sec.steps.map((st,k)=>{ const im=st.im[dev]; const d=st[dev]||st.d; return `<div class="gstep"><div class="gh"><span class="gn">${k+1}</span><b>${st.h}</b></div><p>${d}</p>${im?`<img src="img/guide/${im}.jpg" alt="${st.h} 화면" loading="lazy">`:''}</div>`; }).join('')
@@ -2777,10 +2916,10 @@ function errToast(msg){ const t=$('#toast'); t.innerHTML=`<span class="tw">!</sp
 /* ---------------- 영수증 크게 보기: 끌기 · 두 손가락 · 휠 ---------------- */
 (function(){ let z={s:1,x:0,y:0}, pts=new Map(), start=null;
   const tgt=()=>document.querySelector('#stage .rcbox .rcsvg');
-  const apply=()=>{ const t=tgt(); if(t){ t.style.transform=`translate(${z.x}px,${z.y}px) scale(${z.s})`; t.style.cursor=z.s>1?'grab':'zoom-in'; } const h=document.getElementById('zhint'); if(h) h.textContent=z.s>1?`${Math.round(z.s*100)}% · 두 번 눌러 원래대로`:'두 손가락으로 벌리거나, 끌어서 확대해 보세요'; };
+  const apply=()=>{ const t=tgt(); if(t){ t.style.transform=`translate(${z.x}px,${z.y}px) scale(${z.s})`; t.style.cursor=z.s>1?'grab':'zoom-in'; } const h=document.getElementById('zhint'); if(h) h.textContent=z.s>1?`${Math.round(z.s*100)}% · 두 번 눌러 원래대로`:'마우스 휠로 확대 · 🔍 누르면 크게 보기'; };
   window.resetZoom=()=>{ z={s:1,x:0,y:0}; apply(); };
   const st=()=>document.getElementById('stage');
-  document.addEventListener('pointerdown',e=>{ const t=tgt(); if(!t||!e.target.closest('#stage .rcbox')) return; pts.set(e.pointerId,{x:e.clientX,y:e.clientY}); e.target.setPointerCapture&&e.target.setPointerCapture(e.pointerId);
+  document.addEventListener('pointerdown',e=>{ const t=tgt(); if(!t||!e.target.closest('#stage .rcbox')||e.pointerType==='touch') return; pts.set(e.pointerId,{x:e.clientX,y:e.clientY}); e.target.setPointerCapture&&e.target.setPointerCapture(e.pointerId);
     if(pts.size===2){ const [a,b]=[...pts.values()]; start={d:Math.hypot(a.x-b.x,a.y-b.y),s:z.s,mx:(a.x+b.x)/2,my:(a.y+b.y)/2,x:z.x,y:z.y}; } else start={px:e.clientX,py:e.clientY,x:z.x,y:z.y}; });
   document.addEventListener('pointermove',e=>{ if(!pts.has(e.pointerId)) return; pts.set(e.pointerId,{x:e.clientX,y:e.clientY});
     if(pts.size===2&&start&&start.d){ const [a,b]=[...pts.values()]; const d=Math.hypot(a.x-b.x,a.y-b.y); z.s=Math.max(1,Math.min(5,start.s*d/start.d)); const mx=(a.x+b.x)/2,my=(a.y+b.y)/2; z.x=start.x+(mx-start.mx); z.y=start.y+(my-start.my); apply(); e.preventDefault(); }
@@ -2788,7 +2927,7 @@ function errToast(msg){ const t=$('#toast'); t.innerHTML=`<span class="tw">!</sp
   const up=e=>{ pts.delete(e.pointerId); if(pts.size===1){ const [a]=[...pts.values()]; start={px:a.x,py:a.y,x:z.x,y:z.y}; } else if(!pts.size) start=null; };
   document.addEventListener('pointerup',up); document.addEventListener('pointercancel',up);
   document.addEventListener('wheel',e=>{ if(!tgt()||!e.target.closest('#stage .rcbox')) return; e.preventDefault(); z.s=Math.max(1,Math.min(5,z.s*(e.deltaY<0?1.15:1/1.15))); if(z.s===1){ z.x=0; z.y=0; } apply(); },{passive:false});
-  document.addEventListener('dblclick',e=>{ if(!e.target.closest('#stage .rcbox')) return; if(z.s>1) resetZoom(); else { z.s=2.5; apply(); } });
+  document.addEventListener('dblclick',e=>{ if(!e.target.closest('#stage .rcbox')||isPhone()) return; if(z.s>1) resetZoom(); else { z.s=2.5; apply(); } });
   new MutationObserver(()=>{ if(tgt()&&!tgt().dataset.z){ tgt().dataset.z=1; z={s:1,x:0,y:0}; apply(); } }).observe(document.body,{childList:true,subtree:true});
 })();
 
@@ -2816,6 +2955,23 @@ window.addEventListener('popstate',e=>{ NAV.busy=true; const c=NAV.cur();
 /* 미리보기: 긴 글은 칸 안에 들어가게 줄이기 */
 const _rp=renderPreview; renderPreview=function(){ _rp(); requestAnimationFrame(()=>document.querySelectorAll('#pvscale .ov').forEach(o=>{ if(o.scrollHeight<=o.clientHeight+1&&o.scrollWidth<=o.clientWidth+1) return; let f=100; while(f>55&&(o.scrollHeight>o.clientHeight+1||o.scrollWidth>o.clientWidth+1)){ f-=5; o.style.fontSize=f+'%'; o.querySelectorAll('*').forEach(x=>x.style.fontSize='inherit'); } })); };
 
+
+/* ---------------- 🔍 크게 보기 (누르고 내려서 보기) ---------------- */
+function openMag(i){ const d=curDoc(); if(!d||!d.receipts[i]) return; const r=d.receipts[i];
+  let m=document.getElementById('magV'); if(!m){ m=document.createElement('div'); m.id='magV'; m.className='magv'; document.body.appendChild(m); }
+  let w=100; const draw=()=>{ m.innerHTML=`<div class="mh"><b>영수증 크게 보기</b><span class="mz"><button type="button" data-mz="-1" aria-label="작게">－</button><em>${w}%</em><button type="button" data-mz="1" aria-label="크게">＋</button></span><button type="button" class="mx" data-mx aria-label="닫기">닫기</button></div><div class="mb"><div class="mi" style="width:${w}%">${rcSVG(r,true)}</div></div><p class="mf">위아래·옆으로 밀어서 보세요. 노란 형광펜이 읽은 자리예요.</p>`; };
+  draw(); m.classList.add('on');
+  m.onclick=e=>{ if(e.target.closest('[data-mx]')){ m.classList.remove('on'); return; } const z=e.target.closest('[data-mz]'); if(z){ w=Math.max(100,Math.min(400,w+ (+z.dataset.mz)*50)); const sc=m.querySelector('.mb'); const ry=sc.scrollTop/(sc.scrollHeight||1); draw(); const sc2=m.querySelector('.mb'); sc2.scrollTop=ry*sc2.scrollHeight; } }; }
+
+/* ---------------- 텔레그램 PDF: 미리 만들어 두기 ---------------- */
+let pdfJob=null;
+function prepPdf(){ const d=curDoc(); if(!d) return; pdfJob={id:d.id,ready:false,file:null,err:null}; const job=pdfJob;
+  pagesJpeg(d).then(pg=>{ job.file=new File([jpegsToPdf(pg)],fileName(d)+'.pdf',{type:'application/pdf'}); job.ready=true; const sh=$('#mShare'); if(sh&&sh.dataset.mode!=='photo') sh.querySelector('small').textContent='PDF 준비됐어요. 누르면 공유 창이 떠요'; }).catch(e=>{ job.err=e; console.error(e); }); }
+
+document.getElementById('editor').addEventListener('click',e=>{ const q=e.target.closest('[data-act="qtip"]'); if(!q) return; const n=document.getElementById('qnote'); if(n) n.hidden=!n.hidden; });
+function askSeen(go){ let m=document.getElementById('mSeen'); if(!m){ m=document.createElement('div'); m.className='modal'; m.id='mSeen'; document.body.appendChild(m); }
+  m.innerHTML=`<div class="mbox seenbox"><div class="bi">✓</div><h3>출력 모습을 확인하셨나요?</h3><p>가운데 <b>출력 미리보기</b>에서<br>날짜·금액·제목이 맞는지 한 번 더 봐 주세요.</p><p class="sm">자동으로 읽은 숫자는 틀릴 수 있어요.</p><div class="sbtns"><button class="btn pri" type="button" data-sn="ok">네, 확인했어요</button><button class="btn" type="button" data-sn="no">다시 볼게요</button></div></div>`;
+  m.classList.add('on'); m.onclick=e=>{ const b=e.target.closest('[data-sn]'); if(!b&&e.target!==m) return; m.classList.remove('on'); if(b&&b.dataset.sn==='ok') go(); }; }
 /* refresh 훅 */
 const _refresh2=refresh;
 refresh=function(full){ if(cur){ const c=docs.find(x=>x.id===cur); if(c&&c.closed) c.closed=false; } if(!curDoc()){ const o=openDocs(); if(o.length) cur=o[0].id; }
